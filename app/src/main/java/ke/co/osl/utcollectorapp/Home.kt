@@ -86,8 +86,6 @@ class Home : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav_home -> goHome()
                 R.id.mappedPoints -> mappedPoints()
-                R.id.waterPipes -> mappedWaterPipes()
-                R.id.sewerlines -> mappedSewerLines()
                 R.id.changePassword -> changePassword()
                 R.id.userDetails -> showUserInfo()
                 R.id.logout -> signOut()
@@ -137,41 +135,34 @@ class Home : AppCompatActivity() {
 
     private fun addWaterList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.customermeters, "Customer Meters"))
-        paramList.add(Params(R.drawable.waterpipes, "Water Pipes"))
-        paramList.add(Params(R.drawable.watertanks, "Water Tanks"))
-        paramList.add(Params(R.drawable.valves, "Valves"))
-        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
-        paramList.add(Params(R.drawable.mastermeter, "PRV"))
+//        paramList.add(Params(R.drawable.customermeters, "Customer Meters"))
+//        paramList.add(Params(R.drawable.waterpipes, "Water Pipes"))
+//        paramList.add(Params(R.drawable.watertanks, "Water Tanks"))
+//        paramList.add(Params(R.drawable.valves, "Valves"))
+//        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
+//        paramList.add(Params(R.drawable.mastermeter, "PRV"))
         paramList.add(Params(R.drawable.mastermeter, "Agrovets"))
         return paramList
     }
 
     private fun addSewerList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
-        paramList.add(Params(R.drawable.manholes, "Manholes"))
+//        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
+//        paramList.add(Params(R.drawable.manholes, "Manholes"))
         return paramList
     }
 
     private fun addProjectList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.customermeters, "Point Project"))
-        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
+//        paramList.add(Params(R.drawable.customermeters, "Point Project"))
+//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
 
         return paramList
     }
 
-    private fun mappedWaterPipes() {
-        startActivity(Intent(this@Home, MappedWaterPipes::class.java))
-    }
-
-    private fun mappedSewerLines() {
-        startActivity(Intent(this@Home, MappedSewerLines::class.java))
-    }
 
     private fun goHome() {
-        startActivity(Intent(this@Home, Incidences::class.java))
+        startActivity(Intent(this@Home, LoginPage::class.java))
     }
 
     private fun showUserInfo() {
@@ -192,7 +183,7 @@ class Home : AppCompatActivity() {
     private fun signOut() {
         editor.remove("token")
         editor.commit()
-        startActivity(Intent(this@Home, Incidences::class.java))
+        startActivity(Intent(this@Home, LoginPage::class.java))
         finish()
     }
 

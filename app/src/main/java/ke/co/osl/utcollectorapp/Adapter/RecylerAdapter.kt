@@ -54,16 +54,16 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
             addnew.setOnClickListener{
                 options.visibility = View.GONE
                 when(textView.text){
-                    "Customer Meters" -> mapCustomerMeters()
-                    "Water Pipes" -> mapWaterPipes()
-                    "Water Tanks" -> mapTanks()
-                    "Valves" -> mapValves()
-                    "Sewer Lines" -> mapSewerlines()
-                    "Manholes" -> mapManHoles()
-                    "Point Project" -> mapPointProjects()
-                    "Line Project" -> mapLineProjects()
-                    "Master Meters" -> mapMasterMeters()
-                    "PRV" -> mapPRV()
+//                    "Customer Meters" -> mapCustomerMeters()
+//                    "Water Pipes" -> mapWaterPipes()
+//                    "Water Tanks" -> mapTanks()
+//                    "Valves" -> mapValves()
+//                    "Sewer Lines" -> mapSewerlines()
+//                    "Manholes" -> mapManHoles()
+//                    "Point Project" -> mapPointProjects()
+//                    "Line Project" -> mapLineProjects()
+//                    "Master Meters" -> mapMasterMeters()
+//                    "PRV" -> mapPRV()
                     "Agrovets" -> mapAgrovets()
                     else -> {}
                 }
@@ -72,16 +72,16 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
             update.setOnClickListener{
                 options.visibility = View.GONE
                 when(textView.text){
-                    "Customer Meters" -> updateCustomerMeters()
-                    "Water Pipes" -> updateWaterPipes()
-                    "Master Meters" -> updateMasterMeters()
-                    "PRV" -> updatePRV()
-                    "Water Tanks" -> updateTanks()
-                    "Valves" -> updateValves()
-                    "Sewer Lines" -> updateSewerlines()
-                    "Manholes" -> updateManHoles()
-                    "Point Project" -> mapPointProjects()
-                    "Line Project" -> mapLineProjects()
+//                    "Customer Meters" -> updateCustomerMeters()
+//                    "Water Pipes" -> updateWaterPipes()
+//                    "Master Meters" -> updateMasterMeters()
+//                    "PRV" -> updatePRV()
+//                    "Water Tanks" -> updateTanks()
+//                    "Valves" -> updateValves()
+//                    "Sewer Lines" -> updateSewerlines()
+//                    "Manholes" -> updateManHoles()
+//                    "Point Project" -> mapPointProjects()
+//                    "Line Project" -> mapLineProjects()
                     else -> {}
                 }
 

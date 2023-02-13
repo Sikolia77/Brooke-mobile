@@ -16,7 +16,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/greenblue"
+        android:background="@color/orange"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -28,7 +28,7 @@
         android:gravity="center_vertical"
         android:paddingEnd="24dp"
         android:orientation="horizontal"
-        android:background="@color/greenblue"
+        android:background="@color/orange"
         >
 
         <TextView
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:padding="8dp"
-                android:text="Water Networks"
+                android:text="Animal Health"
                 android:layout_marginTop="24dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:padding="8dp"
-                android:text="Sewer Networks"
+                android:text="Advocacy and Innovation"
                 android:layout_marginTop="24dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:padding="8dp"
-                android:text="New Project"
+                android:text="Community Engagement"
                 android:layout_marginTop="24dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"

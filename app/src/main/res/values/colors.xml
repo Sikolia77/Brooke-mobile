@@ -11,8 +11,9 @@
     <color name="green">#2196F3</color>
     <color name="translucent_green">#0D2196F3</color>
     <color name="light_green">#009688</color>
-    <color name="orange">#FF5722</color>
+    <color name="orange">#fe5000</color>
     <color name="light_orange">#FFC107</color>
     <color name="transparent_black">#6B000000</color>
     <color name="lightgreen">#D1E7F1</color>
+    <color name="grey">#425563</color>
 </resources>

@@ -163,7 +163,7 @@ class LoginPage: AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val i = Intent(this, Incidences::class.java)
+        val i = Intent(this, LandingPage::class.java)
         startActivity(i)
         finish()
     }

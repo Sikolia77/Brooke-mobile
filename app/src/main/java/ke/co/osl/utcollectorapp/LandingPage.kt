@@ -22,7 +22,7 @@ class LandingPage: AppCompatActivity() {
             }
 
             override fun onFinish() {
-                startActivity(Intent(this@LandingPage,Incidences::class.java))
+                startActivity(Intent(this@LandingPage,LoginPage::class.java))
                 finish()
             }
         }
