@@ -85,6 +85,15 @@ interface ApiInterface {
         @GET("agrovets/details/{id}")
         fun searchAgrovets(@Path("id") id: String) : Call<List<AgrovetGetBody>>
 
+        @POST("farriers/create")
+        fun postFarrier(@Body farriersBody: FarriersBody) : Call<Message>
+
+        @PUT("farriers/{id}")
+        fun putFarrier(@Path("id") id:String, @Body farrierGetBody: FarrierGetBody) : Call<Message>
+
+        @GET("farriers/details/{id}")
+        fun searchFarrier(@Path("id") id: String) : Call<List<FarrierGetBody>>
+
         @POST("valves/create")
         fun postValves(@Body valveBody: ValveBody) : Call<Message>
 

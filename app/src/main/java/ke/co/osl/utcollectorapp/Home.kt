@@ -142,6 +142,7 @@ class Home : AppCompatActivity() {
 //        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
 //        paramList.add(Params(R.drawable.mastermeter, "PRV"))
         paramList.add(Params(R.drawable.mastermeter, "Agrovets"))
+
         return paramList
     }
 
@@ -149,6 +150,7 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
 //        paramList.add(Params(R.drawable.manholes, "Manholes"))
+        paramList.add(Params(R.drawable.customermeters, "Farriers"))
         return paramList
     }
 

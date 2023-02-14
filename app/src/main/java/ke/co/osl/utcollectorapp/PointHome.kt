@@ -170,6 +170,7 @@ class PointHome : AppCompatActivity() {
                     "Master Meters" -> mapMasterMeters()
                     "PRV" -> mapPRV()
                     "Agrovets" -> mapAgrovets()
+                    "Farriers" -> mapFarriers()
                     else -> {}
                 }
                 System.out.println("SYSTEM CHECKS: PAGE NUMBER ONE CONFIRMED!")
@@ -230,6 +231,13 @@ class PointHome : AppCompatActivity() {
 
     private fun mapAgrovets() {
         val intent = Intent(this, Agrovets::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
+    private fun mapFarriers() {
+        val intent = Intent(this, Farriers::class.java)
         intent.putExtra("lat", lat)
         intent.putExtra("lng", lng)
         startActivity(intent)
