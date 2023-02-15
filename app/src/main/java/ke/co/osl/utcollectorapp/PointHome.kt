@@ -170,8 +170,8 @@ class PointHome : AppCompatActivity() {
                     "Master Meters" -> mapMasterMeters()
                     "PRV" -> mapPRV()
                     "Agrovets" -> mapAgrovets()
+                    "Careclubs" -> mapCareclubs()
                     "Farriers" -> mapFarriers()
-                    "Care Clubs" -> mapCareclubs()
                     "Equine Owners" -> mapEquineowners()
                     "Community Groups" -> mapCommunityGroups()
 
@@ -240,6 +240,13 @@ class PointHome : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun mapCareclubs() {
+        val intent = Intent(this, CareClubs::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
     private fun mapCommunityGroups() {
         val intent = Intent(this, CommunityGroups::class.java)
         intent.putExtra("lat", lat)
@@ -247,12 +254,6 @@ class PointHome : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun mapCareclubs() {
-        val intent = Intent(this, CareClubs::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
 
     private fun mapEquineowners() {
         val intent = Intent(this, EquineOwners::class.java)

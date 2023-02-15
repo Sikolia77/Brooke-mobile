@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GIS Data Collector</string>
+    <string name="app_name">Brooke Mapper</string>
     <string name="app_header_title">Brooke East Africa</string>
     <string name="app_header_title2">GIS Data Collector</string>
     <string name="title_activity_home">Home</string>
