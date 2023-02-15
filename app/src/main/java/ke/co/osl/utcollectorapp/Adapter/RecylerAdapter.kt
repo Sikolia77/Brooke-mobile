@@ -67,6 +67,8 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
                     "Agrovets" -> mapAgrovets()
                     "Farriers" -> mapFarriers()
                     "Careclubs" -> mapCareclubs()
+                    "Equineowners" -> mapEquineowners()
+                    "CommunityGroups" -> mapCommunityGroups()
 
                     else -> {}
                 }
@@ -175,7 +177,21 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
 
         private fun mapCareclubs() {
             val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("MappedItem", "Farriers")
+            intent.putExtra("MappedItem", "Careclubs")
+            intent.putExtra("isUpdating", false)
+            context.startActivity(intent)
+        }
+
+        private fun mapEquineowners() {
+            val intent = Intent(context, PointHome::class.java)
+            intent.putExtra("MappedItem", "Equine Owners")
+            intent.putExtra("isUpdating", false)
+            context.startActivity(intent)
+        }
+
+        private fun mapCommunityGroups() {
+            val intent = Intent(context, PointHome::class.java)
+            intent.putExtra("MappedItem", "Community Groups")
             intent.putExtra("isUpdating", false)
             context.startActivity(intent)
         }

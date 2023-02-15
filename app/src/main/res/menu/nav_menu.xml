@@ -11,21 +11,6 @@
                     android:title="Home" />
 
                 <item
-                    android:id="@+id/mappedPoints"
-                    android:icon="@drawable/add_location"
-                    android:title="Mapped Customers" />
-
-                <item
-                    android:id="@+id/waterPipes"
-                    android:icon="@drawable/add_location"
-                    android:title="Mapped Waterpipes" />
-
-                <item
-                    android:id="@+id/sewerlines"
-                    android:icon="@drawable/add_location"
-                    android:title="Mapped Sewerlines" />
-
-                <item
                     android:id="@+id/changePassword"
                     android:icon="@drawable/ic_password"
                     android:title="Change Password" />

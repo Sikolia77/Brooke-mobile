@@ -32,14 +32,6 @@
             </meta-data>
         </provider>
 
-<!--        <activity android:name=".Home"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
         <activity android:name=".LandingPage"
             android:exported="true">
             <intent-filter>
@@ -74,7 +66,9 @@
         <activity android:name=".Forms.PRV" />
         <activity android:name=".Forms.Agrovets" />
         <activity android:name=".Forms.Farriers" />
-        <activity android:name=".Forms.Careclubs" />
+        <activity android:name=".Forms.EquineOwners" />
+        <activity android:name=".Forms.CommunityGroups" />
+        <activity android:name=".Forms.CareClubs" />
         <activity android:name=".Forms.LineProjects" />
     </application>
 

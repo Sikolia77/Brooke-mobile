@@ -20,7 +20,7 @@ import java.util.*
 
 //12713082
 
-class Careclubs: AppCompatActivity() {
+class CareClubs: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
@@ -28,7 +28,7 @@ class Careclubs: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agrovets_form)
+        setContentView(R.layout.careclubs_form)
 
         preferences = this.getSharedPreferences("ut_manager", MODE_PRIVATE)
         editor = preferences.edit()
@@ -139,11 +139,14 @@ class Careclubs: AppCompatActivity() {
             error.text = ""
 
             if (TextUtils.isEmpty(name.text.toString())) {
-                error.text = "Club Name cannot be empty!"
+                error.text = "Agrovet Name cannot be empty!"
                 return@setOnClickListener
             }
 
-
+            if (TextUtils.isEmpty(studentsno.text.toString())) {
+                error.text = "Service Area cannot be empty!"
+                return@setOnClickListener
+            }
 
             progress.visibility = View.VISIBLE
             val careclubsBody = CareclubsBody(
@@ -161,7 +164,6 @@ class Careclubs: AppCompatActivity() {
                 user.text.toString()
             )
 
-            System.out.println("THE AGROVET BODY IS $careclubsBody")
 
             val apiInterface = ApiInterface.create().postCareclub(careclubsBody)
 
@@ -171,7 +173,7 @@ class Careclubs: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@Careclubs, Home::class.java)
+                        val intent = Intent(this@CareClubs, Home::class.java)
                         startActivity(intent)
                     }
                     else {
@@ -238,7 +240,6 @@ class Careclubs: AppCompatActivity() {
                 user.text.toString()
             )
 
-            System.out.println("Agrovets is " + careclubsBody)
 
             val apiInterface = ApiInterface.create().putCareclubs(body.ID,careclubsBody)
             apiInterface.enqueue( object : Callback<Message> {
@@ -251,7 +252,7 @@ class Careclubs: AppCompatActivity() {
                             }
                             override fun onFinish() {
                                 progress.visibility = View.GONE
-                                startActivity(Intent(this@Careclubs, Home::class.java))
+                                startActivity(Intent(this@CareClubs, Home::class.java))
                                 finish()
                             }
                         }
@@ -271,7 +272,6 @@ class Careclubs: AppCompatActivity() {
         }
 
     }
-
 
     fun updateSpinner(spinner: Spinner, value: String?) {
         val myAdap: ArrayAdapter<String> =

@@ -85,7 +85,6 @@ class Home : AppCompatActivity() {
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> goHome()
-                R.id.mappedPoints -> mappedPoints()
                 R.id.changePassword -> changePassword()
                 R.id.userDetails -> showUserInfo()
                 R.id.logout -> signOut()
@@ -142,6 +141,8 @@ class Home : AppCompatActivity() {
 //        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
 //        paramList.add(Params(R.drawable.mastermeter, "PRV"))
         paramList.add(Params(R.drawable.mastermeter, "Agrovets"))
+        paramList.add(Params(R.drawable.valves, "Equineowners"))
+        paramList.add(Params(R.drawable.waterpipes, "CommunityGroups"))
 
         return paramList
     }
@@ -151,6 +152,7 @@ class Home : AppCompatActivity() {
 //        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
 //        paramList.add(Params(R.drawable.manholes, "Manholes"))
         paramList.add(Params(R.drawable.customermeters, "Farriers"))
+        paramList.add(Params(R.drawable.manholes, "Careclubs"))
         return paramList
     }
 

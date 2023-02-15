@@ -11,7 +11,7 @@ interface ApiInterface {
 
         companion object {
 
-         var BASE_URL = "http://102.222.147.190/api/"
+         var BASE_URL = "http://194.163.165.107:4001/api/"
 
             fun create() : ApiInterface {
                 val retrofit = Retrofit.Builder()
@@ -25,10 +25,10 @@ interface ApiInterface {
         @POST("reports/create")
         fun reportIncident(@Body body: MultipartBody) : Call<Message>
 
-        @POST("mobile/login")
+        @POST("auth/login")
         fun loginUser(@Body loginBody: LoginBody) : Call<Message>
 
-        @POST("mobile/meterreaderlogin")
+        @POST("auth/meterreaderlogin")
         fun loginMeterReader(@Body loginBody: LoginBody) : Call<Message>
 
         @POST("customers/create")
@@ -84,6 +84,24 @@ interface ApiInterface {
 
         @GET("agrovets/details/{id}")
         fun searchAgrovets(@Path("id") id: String) : Call<List<AgrovetGetBody>>
+
+        @POST("communitygroups/create")
+        fun postCommunityGroups(@Body communitygroupsBody: CommunityGroupsBody) : Call<Message>
+
+        @PUT("communitygroups/{id}")
+        fun putCommunityGroups(@Path("id") id:String, @Body communitygroupsBody: CommunityGroupsGetBody) : Call<Message>
+
+        @GET("communitygroups/details/{id}")
+        fun searchCommunityGroups(@Path("id") id: String) : Call<List<CommunityGroupsGetBody>>
+
+        @POST("equineowners/create")
+        fun postEquineowner(@Body equineownersBody: EquineOwnersBody) : Call<Message>
+
+        @PUT("equineowners/{id}")
+        fun putEquineowner(@Path("id") id:String, @Body equineownersBody: EquineOwnersGetBody) : Call<Message>
+
+        @GET("equineowners/details/{id}")
+        fun searchEquineowner(@Path("id") id: String) : Call<List<EquineOwnersGetBody>>
 
         @POST("careclubs/create")
         fun postCareclub(@Body careclubsBody: CareclubsBody) : Call<Message>
