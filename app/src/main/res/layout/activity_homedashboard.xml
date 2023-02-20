@@ -79,7 +79,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:background="@drawable/button"
+                android:background="@color/orange"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -106,7 +106,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/waterrecycler"
-                android:background="@drawable/button"
+                android:background="@color/orange"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -132,7 +132,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sewerrecycler"
-                android:background="@drawable/button"
+                android:background="@color/orange"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -140,12 +140,64 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/projectrecycler"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtproject"
+                android:layout_marginTop="24dp"/>
+            <TextView
+                android:id="@+id/txtpartners"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:text="Partners"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/projectrecycler"
+                android:background="@color/orange"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/partnersrecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtpartners"
+                android:layout_marginTop="24dp"
+                />
+
+            <TextView
+                android:id="@+id/txtcommunications"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:text="Communications"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnersrecycler"
+                android:background="@color/orange"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/communicationsrecycler"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtproject"/>
+                app:layout_constraintTop_toBottomOf="@id/txtcommunications"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

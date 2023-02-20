@@ -174,6 +174,7 @@ class PointHome : AppCompatActivity() {
                     "Farriers" -> mapFarriers()
                     "Equine Owners" -> mapEquineowners()
                     "Community Groups" -> mapCommunityGroups()
+                    "Practitioners" -> mapPractitioners()
 
                     else -> {}
                 }
@@ -253,6 +254,15 @@ class PointHome : AppCompatActivity() {
         intent.putExtra("lng", lng)
         startActivity(intent)
     }
+
+    private fun mapPractitioners() {
+        val intent = Intent(this, Practitioners::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
+
 
 
     private fun mapEquineowners() {

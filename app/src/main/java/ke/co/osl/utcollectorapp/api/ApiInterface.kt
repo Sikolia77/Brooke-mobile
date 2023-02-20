@@ -85,6 +85,15 @@ interface ApiInterface {
         @GET("agrovets/details/{id}")
         fun searchAgrovets(@Path("id") id: String) : Call<List<AgrovetGetBody>>
 
+        @POST("practitioners/create")
+        fun postPractitioner(@Body practitionerBody: PractitionerBody) : Call<Message>
+
+        @PUT("practitioners/{id}")
+        fun putPractitioner(@Path("id") id:String, @Body practitionerBody: PractitionerGetBody) : Call<Message>
+
+        @GET("practitioners/details/{id}")
+        fun searchPractitioners(@Path("id") id: String) : Call<List<PractitionerGetBody>>
+
         @POST("communitygroups/create")
         fun postCommunityGroups(@Body communitygroupsBody: CommunityGroupsBody) : Call<Message>
 

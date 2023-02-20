@@ -130,6 +130,20 @@ class Home : AppCompatActivity() {
         projectRecycler.layoutManager = GridLayoutManager(this, 2)
         val projectAdapter = RecylerAdapter(addProjectList(),this)
         projectRecycler.adapter = projectAdapter
+
+        //Partners recycler
+        var partnersRecycler: RecyclerView  = findViewById(R.id.partnersrecycler)
+        partnersRecycler.setHasFixedSize(true)
+        partnersRecycler.layoutManager = GridLayoutManager(this, 2)
+        val partnersAdapter = RecylerAdapter(addPartnersList(),this)
+        partnersRecycler.adapter = partnersAdapter
+
+        //Communications recycler
+        var communicationsRecycler: RecyclerView  = findViewById(R.id.communicationsrecycler)
+        communicationsRecycler.setHasFixedSize(true)
+        communicationsRecycler.layoutManager = GridLayoutManager(this, 2)
+        val communicationsAdapter = RecylerAdapter(addCommunicationsList(),this)
+        communicationsRecycler.adapter = communicationsAdapter
     }
 
     private fun addWaterList():ArrayList<Params> {
@@ -141,8 +155,7 @@ class Home : AppCompatActivity() {
 //        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
 //        paramList.add(Params(R.drawable.mastermeter, "PRV"))
         paramList.add(Params(R.drawable.mastermeter, "Agrovets"))
-        paramList.add(Params(R.drawable.valves, "Equineowners"))
-        paramList.add(Params(R.drawable.waterpipes, "CommunityGroups"))
+        paramList.add(Params(R.drawable.customermeters, "Farriers"))
 
         return paramList
     }
@@ -151,8 +164,9 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
 //        paramList.add(Params(R.drawable.manholes, "Manholes"))
-        paramList.add(Params(R.drawable.customermeters, "Farriers"))
-        paramList.add(Params(R.drawable.manholes, "Careclubs"))
+        paramList.add(Params(R.drawable.manholes, "Practitioners"))
+
+
         return paramList
     }
 
@@ -160,6 +174,27 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.customermeters, "Point Project"))
 //        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
+        paramList.add(Params(R.drawable.valves, "Equineowners"))
+        paramList.add(Params(R.drawable.waterpipes, "CommunityGroups"))
+//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
+
+        return paramList
+    }
+
+    private fun addPartnersList():ArrayList<Params> {
+        var paramList:ArrayList<Params> = ArrayList()
+//        paramList.add(Params(R.drawable.customermeters, "Point Project"))
+//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
+//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
+
+        return paramList
+    }
+
+    private fun addCommunicationsList():ArrayList<Params> {
+        var paramList:ArrayList<Params> = ArrayList()
+//        paramList.add(Params(R.drawable.customermeters, "Point Project"))
+//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
+//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
 
         return paramList
     }

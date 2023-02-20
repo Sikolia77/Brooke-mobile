@@ -163,7 +163,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:hint="SUb County Name"
-            android:inputType="number"
+            android:inputType="text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/dark_green"
             android:background="@drawable/input_green_border"
