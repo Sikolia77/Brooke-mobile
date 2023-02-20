@@ -154,8 +154,8 @@ class Home : AppCompatActivity() {
 //        paramList.add(Params(R.drawable.valves, "Valves"))
 //        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
 //        paramList.add(Params(R.drawable.mastermeter, "PRV"))
-        paramList.add(Params(R.drawable.mastermeter, "Agrovets"))
-        paramList.add(Params(R.drawable.customermeters, "Farriers"))
+        paramList.add(Params(R.drawable.agrovet, "Agrovets"))
+        paramList.add(Params(R.drawable.farrier, "Farriers"))
 
         return paramList
     }
@@ -164,7 +164,7 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
 //        paramList.add(Params(R.drawable.manholes, "Manholes"))
-        paramList.add(Params(R.drawable.manholes, "Practitioners"))
+        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
 
         return paramList
@@ -174,9 +174,9 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.customermeters, "Point Project"))
 //        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
-        paramList.add(Params(R.drawable.valves, "Equineowners"))
-        paramList.add(Params(R.drawable.waterpipes, "CommunityGroups"))
-//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
+        paramList.add(Params(R.drawable.cawas, "Equineowners"))
+        paramList.add(Params(R.drawable.community, "CommunityGroups"))
+        paramList.add(Params(R.drawable.school, "Careclubs"))
 
         return paramList
     }

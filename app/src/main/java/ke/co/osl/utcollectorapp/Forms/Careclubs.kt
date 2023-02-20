@@ -20,7 +20,7 @@ import java.util.*
 
 //12713082
 
-class CareClubs: AppCompatActivity() {
+class Careclubs: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
@@ -28,7 +28,7 @@ class CareClubs: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.careclubs_form)
+        setContentView(R.layout.form_careclubs)
 
         preferences = this.getSharedPreferences("ut_manager", MODE_PRIVATE)
         editor = preferences.edit()
@@ -130,7 +130,7 @@ class CareClubs: AppCompatActivity() {
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
         val studentsno = findViewById<EditText>(R.id.studentsno)
-        val activities = findViewById<EditText>(R.id.activities)
+        val activities = findViewById<EditText>(R.id.clubactivities)
 
         val lat = intent.getDoubleExtra("lat",0.0)
         val lng = intent.getDoubleExtra("lng",0.0)
@@ -173,7 +173,7 @@ class CareClubs: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@CareClubs, Home::class.java)
+                        val intent = Intent(this@Careclubs, Home::class.java)
                         startActivity(intent)
                     }
                     else {
@@ -202,7 +202,7 @@ class CareClubs: AppCompatActivity() {
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
         val studentsno = findViewById<EditText>(R.id.studentsno)
-        val activities = findViewById<EditText>(R.id.activities)
+        val activities = findViewById<EditText>(R.id.clubactivities)
 
         next.text = "Update"
 
@@ -240,7 +240,6 @@ class CareClubs: AppCompatActivity() {
                 user.text.toString()
             )
 
-
             val apiInterface = ApiInterface.create().putCareclubs(body.ID,careclubsBody)
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
@@ -252,7 +251,7 @@ class CareClubs: AppCompatActivity() {
                             }
                             override fun onFinish() {
                                 progress.visibility = View.GONE
-                                startActivity(Intent(this@CareClubs, Home::class.java))
+                                startActivity(Intent(this@Careclubs, Home::class.java))
                                 finish()
                             }
                         }

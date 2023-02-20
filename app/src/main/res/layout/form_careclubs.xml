@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Care Clubs"
+            android:text="Donkey Care Clubs"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Map Care Clubs"
+            android:text="Map Donkey Care Clubs"
             android:textColor="@color/dark_green"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -89,7 +89,7 @@
             android:layout_marginEnd="24dp"
             android:text="Name *"
             android:textColor="@color/black"
-            
+
             />
 
         <EditText
@@ -100,102 +100,13 @@
             android:layout_marginEnd="24dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:hint="Enter Club Name"
+            android:hint="Enter Community Group Name"
             android:textColor="@color/dark_green"
             android:inputType="text"
             android:background="@drawable/input_green_border"
             android:padding="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             />
-        <!--    Text input end-->
-
-        <!--    Text input start-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Contact *"
-            android:textColor="@color/black"
-
-            />
-
-        <EditText
-            android:id="@+id/contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Enter Club Contact"
-            android:textColor="@color/dark_green"
-            android:inputType="number"
-            android:background="@drawable/input_green_border"
-            android:padding="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            />
-        <!--    Text input end-->
-
-        <!--    Text input start-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Club Patron *"
-            android:textColor="@color/black"
-
-            />
-
-        <EditText
-            android:id="@+id/patron"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Enter Name of CLub PAtron"
-            android:textColor="@color/dark_green"
-            android:inputType="text"
-            android:background="@drawable/input_green_border"
-            android:padding="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            />
-        <!--    Text input end-->
-
-        <!--    Text input start-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Club Level *"
-            android:textColor="@color/black"
-
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            >
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/clublevel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/clublevel"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/dark_green"
-                android:backgroundTint="@color/dark_green"
-                android:spinnerMode="dropdown"
-                />
-        </LinearLayout>
         <!--    Text input end-->
 
         <!--    Text input start-->
@@ -233,6 +144,7 @@
         <!--    Text input end-->
 
         <!--    Text input start-->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -240,7 +152,7 @@
             android:layout_marginEnd="24dp"
             android:text="Sub County"
             android:textColor="@color/black"
-            
+
             />
 
         <EditText
@@ -252,7 +164,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:hint="SUb County Name"
-            android:inputType="number"
+            android:inputType="text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/dark_green"
             android:background="@drawable/input_green_border"
@@ -270,7 +182,7 @@
             android:layout_marginEnd="24dp"
             android:text="Ward"
             android:textColor="@color/black"
-            
+
             />
         <EditText
             android:id="@+id/ward"
@@ -291,13 +203,131 @@
 
         <!--    Text input end-->
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="School level"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_green_border"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/clublevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/schoollevel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/dark_green"
+                android:backgroundTint="@color/dark_green"
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+        <!--    Text input end-->
+
         <!--    Text input start-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Number of Students *"
+            android:text="School Contact *"
+            android:textColor="@color/black"
+
+            />
+        <EditText
+            android:id="@+id/contacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="School Contact"
+            android:inputType="number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/dark_green"
+            android:background="@drawable/input_green_border"
+            android:padding="10dp"
+
+            />
+
+        <!--    Text input end-->
+
+
+
+        <!--    Text input start-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Nature of Club"
+            android:textColor="@color/black"
+
+            />
+        <EditText
+            android:id="@+id/nature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Nature of Club"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/dark_green"
+            android:background="@drawable/input_green_border"
+            android:padding="10dp"
+
+            />
+
+        <!--    Text input end-->
+        <!--    Text input start-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Patron Name"
+            android:textColor="@color/black"
+
+            />
+        <EditText
+            android:id="@+id/patron"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Name of Club Patron"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/dark_green"
+            android:background="@drawable/input_green_border"
+            android:padding="10dp"
+
+            />
+
+        <!--    Text input start-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Number of Students"
             android:textColor="@color/black"
 
             />
@@ -309,7 +339,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:hint="Number of Students in Club"
+            android:hint="Number of Students"
             android:inputType="number"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/dark_green"
@@ -318,26 +348,25 @@
 
             />
 
-        <!--    Text input end-->
         <!--    Text input start-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Club Activities*"
+            android:text="Club Activities"
             android:textColor="@color/black"
 
             />
         <EditText
-            android:id="@+id/activities"
+            android:id="@+id/clubactivities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:hint="Major Club Activity"
+            android:hint="Activities of the Club"
             android:inputType="text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/dark_green"
@@ -346,7 +375,6 @@
 
             />
 
-        <!--    Text input end-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -135,7 +135,7 @@
         <item>032 NAKURU</item>
     </string-array>
 
-    <string-array name="clublevel">
+    <string-array name="schoollevel">
         <item></item>
         <item>PRIMARY</item>
         <item>SECONDARY</item>
