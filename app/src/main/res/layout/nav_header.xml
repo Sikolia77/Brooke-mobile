@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="@drawable/bg"
+    android:layout_height="400dp"
+    android:background="@drawable/foul"
     android:gravity="center_vertical"
     android:orientation="vertical">
 
@@ -10,22 +10,22 @@
         android:id="@+id/appname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Utility Manager"
+        android:text="BEA Mapper"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="50sp"
         android:layout_marginStart="24dp"
         android:textStyle="bold"
         android:gravity="left"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="250dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Map Utility Networks"
+        android:text="Map Brooke E.A Data"
         android:textColor="@color/orange"
-        android:textSize="16sp"
+        android:textSize="30sp"
         android:layout_marginStart="24dp"
         android:gravity="left"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

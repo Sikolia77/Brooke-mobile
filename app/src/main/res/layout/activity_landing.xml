@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg3"
+    android:background="@drawable/bg4"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -24,8 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="24dp"
+            android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text=""
+            android:text="Welcome to"
             android:textColor="@color/orange"
             android:textSize="14sp" />
 
@@ -33,10 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Brooke East Africa \n  \n GIS Data Collector"
-            android:textColor="@color/orange"
+            android:textColor="@color/grey"
             android:textSize="24sp"
             android:textStyle="bold" />
 

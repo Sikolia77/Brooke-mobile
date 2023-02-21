@@ -42,35 +42,16 @@
         </activity>
         <activity android:name=".Home" />
         <activity android:name=".PointHome" />
-        <activity android:name=".LineHome" />
-        <activity android:name=".Incidences" />
-        <activity android:name=".Reporting" />
-        <activity android:name=".Forms.Form1" />
-        <activity android:name=".Forms.Form2" />
-        <activity android:name=".Forms.Form3" />
-        <activity android:name=".MappedPoints" />
-        <activity android:name=".MappedSewerLines" />
-        <activity android:name=".MappedWaterPipes" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".LoginPageMobileAlert" />
-        <activity android:name=".HomeMobileAlert" />
-        <activity android:name=".Forms.SewerlinesForm" />
-        <activity android:name=".Forms.WaterPipesForm" />
-        <activity android:name=".Forms.Tanks" />
-        <activity android:name=".Forms.ValvesForm" />
-        <activity android:name=".Forms.ManHolesForm" />
         <activity android:name=".PrivacyPolicy" />
         <activity android:name=".About" />
         <activity android:name=".Forms.PointProjects" />
-        <activity android:name=".Forms.MasterMeters" />
-        <activity android:name=".Forms.PRV" />
         <activity android:name=".Forms.Agrovets" />
         <activity android:name=".Forms.Farriers" />
         <activity android:name=".Forms.EquineOwners" />
         <activity android:name=".Forms.CommunityGroups" />
         <activity android:name=".Forms.Practitioners" />
         <activity android:name=".Forms.Careclubs" />
-        <activity android:name=".Forms.LineProjects" />
     </application>
 
 </manifest>

@@ -148,12 +148,6 @@ class Home : AppCompatActivity() {
 
     private fun addWaterList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-//        paramList.add(Params(R.drawable.customermeters, "Customer Meters"))
-//        paramList.add(Params(R.drawable.waterpipes, "Water Pipes"))
-//        paramList.add(Params(R.drawable.watertanks, "Water Tanks"))
-//        paramList.add(Params(R.drawable.valves, "Valves"))
-//        paramList.add(Params(R.drawable.mastermeter, "Master Meters"))
-//        paramList.add(Params(R.drawable.mastermeter, "PRV"))
         paramList.add(Params(R.drawable.agrovet, "Agrovets"))
         paramList.add(Params(R.drawable.farrier, "Farriers"))
 
@@ -162,8 +156,6 @@ class Home : AppCompatActivity() {
 
     private fun addSewerList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-//        paramList.add(Params(R.drawable.sewerlines, "Sewer Lines"))
-//        paramList.add(Params(R.drawable.manholes, "Manholes"))
         paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
 
@@ -172,8 +164,6 @@ class Home : AppCompatActivity() {
 
     private fun addProjectList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-//        paramList.add(Params(R.drawable.customermeters, "Point Project"))
-//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
         paramList.add(Params(R.drawable.cawas, "Equineowners"))
         paramList.add(Params(R.drawable.community, "CommunityGroups"))
         paramList.add(Params(R.drawable.school, "Careclubs"))
@@ -184,18 +174,12 @@ class Home : AppCompatActivity() {
     private fun addPartnersList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.customermeters, "Point Project"))
-//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
-//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
-
         return paramList
     }
 
     private fun addCommunicationsList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
 //        paramList.add(Params(R.drawable.customermeters, "Point Project"))
-//        paramList.add(Params(R.drawable.waterpipes, "Line Project"))
-//        paramList.add(Params(R.drawable.manholes, "Careclubs"))
-
         return paramList
     }
 
@@ -286,7 +270,7 @@ class Home : AppCompatActivity() {
                         editor.remove("token")
                         editor.commit()
                         error.text = "Logout successful!"
-                        startActivity(Intent(this@Home, Incidences::class.java))
+                        startActivity(Intent(this@Home, LoginPage::class.java))
                     } else {
                         editor.putString("token", "")
                         editor.commit()

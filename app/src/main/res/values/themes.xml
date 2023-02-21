@@ -3,7 +3,7 @@
     <style name="Theme.FarmerMappingApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green</item>
-        <item name="android:windowBackground">@drawable/bg2</item>
+        <item name="android:windowBackground">@drawable/bg4</item>
         <item name="colorPrimaryVariant">@color/dark_green</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
