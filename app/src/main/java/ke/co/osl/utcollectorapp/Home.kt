@@ -150,13 +150,14 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
         paramList.add(Params(R.drawable.agrovet, "Agrovets"))
         paramList.add(Params(R.drawable.farrier, "Farriers"))
+        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
         return paramList
     }
 
     private fun addSewerList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
+//        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
 
         return paramList
