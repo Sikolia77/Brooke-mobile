@@ -162,13 +162,15 @@ class PointHome : AppCompatActivity() {
         startMapping.setOnClickListener{
             if(lat !== 0.0 && lng !== 0.0){
                 when(mappedItem){
-                    "Point Projects" -> mapProjects()
+                    "Abattoirs" -> mapAbattoirs()
                     "Agrovets" -> mapAgrovets()
+                    "Careclubs" -> mapCareclubs()
                     "Farriers" -> mapFarriers()
                     "Equine Owners" -> mapEquineowners()
                     "Community Groups" -> mapCommunityGroups()
                     "Practitioners" -> mapPractitioners()
-                    "Careclubs" -> mapCareclubs()
+
+
 
                     else -> {}
                 }
@@ -193,40 +195,6 @@ class PointHome : AppCompatActivity() {
         }
     }
 
-    private fun mapManHoles() {
-        val intent = Intent(this, ManHolesForm::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
-
-    private fun mapValves() {
-        val intent = Intent(this, ValvesForm::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
-
-    private fun mapTanks() {
-        val intent = Intent(this, Tanks::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
-
-    private fun mapMasterMeters() {
-        val intent = Intent(this, MasterMeters::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
-
-    private fun mapPRV() {
-        val intent = Intent(this, PRV::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
 
     private fun mapAgrovets() {
         val intent = Intent(this, Agrovets::class.java)
@@ -250,15 +218,19 @@ class PointHome : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun mapAbattoirs() {
+        val intent = Intent(this, Abattoirs::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
     private fun mapPractitioners() {
         val intent = Intent(this, Practitioners::class.java)
         intent.putExtra("lat", lat)
         intent.putExtra("lng", lng)
         startActivity(intent)
     }
-
-
-
 
     private fun mapEquineowners() {
         val intent = Intent(this, EquineOwners::class.java)
@@ -269,13 +241,6 @@ class PointHome : AppCompatActivity() {
 
     private fun mapFarriers() {
         val intent = Intent(this, Farriers::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
-
-    private fun mapProjects() {
-        val intent = Intent(this, PointProjects::class.java)
         intent.putExtra("lat", lat)
         intent.putExtra("lng", lng)
         startActivity(intent)

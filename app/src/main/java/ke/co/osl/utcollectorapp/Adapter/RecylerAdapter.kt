@@ -54,23 +54,13 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
             addnew.setOnClickListener{
                 options.visibility = View.GONE
                 when(textView.text){
-//                    "Customer Meters" -> mapCustomerMeters()
-//                    "Water Pipes" -> mapWaterPipes()
-//                    "Water Tanks" -> mapTanks()
-//                    "Valves" -> mapValves()
-//                    "Sewer Lines" -> mapSewerlines()
-//                    "Manholes" -> mapManHoles()
-//                    "Point Project" -> mapPointProjects()
-//                    "Line Project" -> mapLineProjects()
-//                    "Master Meters" -> mapMasterMeters()
-//                    "PRV" -> mapPRV()
                     "Agrovets" -> mapAgrovets()
                     "Farriers" -> mapFarriers()
                     "Careclubs" -> mapCareclubs()
                     "Equineowners" -> mapEquineowners()
                     "CommunityGroups" -> mapCommunityGroups()
                     "Practitioners" -> mapPractitioners()
-
+                    "Abattoirs" -> mapAbattoirs()
                     else -> {}
                 }
             }
@@ -96,71 +86,7 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
 
         }
 
-        private fun mapCustomerMeters() {
-            val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("MappedItem", "Customer Meters")
-            intent.putExtra("isUpdating", false)
-            context.startActivity(intent)
-        }
 
-        private fun updateCustomerMeters() {
-            val intent = Intent(context, Form1::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapWaterPipes() {
-            val intent = Intent(context, LineHome::class.java)
-            intent.putExtra("MappedItem", "waterpipes")
-            intent.putExtra("isUpdating", false)
-            context.startActivity(intent)
-        }
-
-        private fun updateWaterPipes() {
-            val intent = Intent(context, WaterPipesForm::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapMasterMeters() {
-            val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("isUpdating", false)
-            intent.putExtra("MappedItem", "Master Meters")
-            context.startActivity(intent)
-        }
-
-        private fun updateMasterMeters() {
-            val intent = Intent(context, MasterMeters::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapPRV() {
-            val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("isUpdating", false)
-            intent.putExtra("MappedItem", "PRV")
-            context.startActivity(intent)
-        }
-
-        private fun updatePRV() {
-            val intent = Intent(context, PRV::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapTanks() {
-            val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("isUpdating", false)
-            intent.putExtra("MappedItem", "Water Tanks")
-            context.startActivity(intent)
-        }
-
-
-        private fun updateTanks() {
-            val intent = Intent(context, Tanks::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
 
         private fun mapAgrovets() {
             val intent = Intent(context, PointHome::class.java)
@@ -200,6 +126,13 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
         private fun mapPractitioners() {
             val intent = Intent(context, PointHome::class.java)
             intent.putExtra("MappedItem", "Practitioners")
+            intent.putExtra("isUpdating", false)
+            context.startActivity(intent)
+        }
+
+        private fun mapAbattoirs() {
+            val intent = Intent(context, PointHome::class.java)
+            intent.putExtra("MappedItem", "Abattoirs")
             intent.putExtra("isUpdating", false)
             context.startActivity(intent)
         }
