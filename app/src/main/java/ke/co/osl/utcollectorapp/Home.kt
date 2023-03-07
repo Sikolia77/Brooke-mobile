@@ -165,7 +165,7 @@ class Home : AppCompatActivity() {
         var paramList:ArrayList<Params> = ArrayList()
         paramList.add(Params(R.drawable.cawas, "Equineowners"))
         paramList.add(Params(R.drawable.community, "CommunityGroups"))
-        paramList.add(Params(R.drawable.school, "Careclubs"))
+        paramList.add(Params(R.drawable.school, "Schools"))
 
         return paramList
     }

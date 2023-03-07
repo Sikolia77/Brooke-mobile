@@ -85,6 +85,14 @@ interface ApiInterface {
         @GET("agrovets/details/{id}")
         fun searchAgrovets(@Path("id") id: String) : Call<List<AgrovetGetBody>>
 
+        @POST("schools/create")
+        fun postSchools(@Body schoolsBody: SchoolsBody) : Call<Message>
+
+        @PUT("schools/{id}")
+        fun putSchools(@Path("id") id:String, @Body schoolsBody: SchoolsGetBody) : Call<Message>
+
+        @GET("schools/details/{id}")
+        fun searchSchools(@Path("id") id: String) : Call<List<SchoolsGetBody>>
 
 
         @POST("abattoir/create")

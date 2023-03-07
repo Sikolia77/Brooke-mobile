@@ -61,6 +61,7 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
                     "CommunityGroups" -> mapCommunityGroups()
                     "Practitioners" -> mapPractitioners()
                     "Abattoirs" -> mapAbattoirs()
+                    "Schools" -> mapSchools()
                     else -> {}
                 }
             }
@@ -80,13 +81,8 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
 //                    "Line Project" -> mapLineProjects()
                     else -> {}
                 }
-
             }
-
-
         }
-
-
 
         private fun mapAgrovets() {
             val intent = Intent(context, PointHome::class.java)
@@ -136,50 +132,12 @@ class RecylerAdapter (private val paramList:ArrayList<Params>, val context: Cont
             intent.putExtra("isUpdating", false)
             context.startActivity(intent)
         }
-        private fun updateValves() {
-            val intent = Intent(context, ValvesForm::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
 
-        private fun mapSewerlines() {
-            val intent = Intent(context, LineHome::class.java)
-            intent.putExtra("MappedItem", "sewerlines")
-            intent.putExtra("isUpdating", false)
-            context.startActivity(intent)
-        }
-
-        private fun updateSewerlines() {
-            val intent = Intent(context, SewerlinesForm::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapLineProjects() {
-            val intent = Intent(context, LineHome::class.java)
-            intent.putExtra("MappedItem", "lineprojects")
-            intent.putExtra("isUpdating", false)
-            context.startActivity(intent)
-        }
-
-        private fun mapManHoles() {
+        private fun mapSchools() {
             val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("MappedItem", "Man Holes")
+            intent.putExtra("MappedItem", "Schools")
             intent.putExtra("isUpdating", false)
             context.startActivity(intent)
         }
-
-        private fun updateManHoles() {
-            val intent = Intent(context, ManHolesForm::class.java)
-            intent.putExtra("isUpdating", true)
-            context.startActivity(intent)
-        }
-
-        private fun mapPointProjects() {
-            val intent = Intent(context, PointHome::class.java)
-            intent.putExtra("MappedItem", "Point Projects")
-            context.startActivity(intent)
-        }
-
     }
 }

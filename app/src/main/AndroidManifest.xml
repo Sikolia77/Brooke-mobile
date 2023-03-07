@@ -51,8 +51,8 @@
         <activity android:name=".Forms.EquineOwners" />
         <activity android:name=".Forms.CommunityGroups" />
         <activity android:name=".Forms.Practitioners" />
-        <activity android:name=".Forms.Careclubs" />
         <activity android:name=".Forms.Abattoirs" />
+        <activity android:name=".Forms.Schools" />
     </application>
 
 </manifest>

@@ -164,14 +164,11 @@ class PointHome : AppCompatActivity() {
                 when(mappedItem){
                     "Abattoirs" -> mapAbattoirs()
                     "Agrovets" -> mapAgrovets()
-                    "Careclubs" -> mapCareclubs()
                     "Farriers" -> mapFarriers()
                     "Equine Owners" -> mapEquineowners()
                     "Community Groups" -> mapCommunityGroups()
                     "Practitioners" -> mapPractitioners()
-
-
-
+                    "Schools" -> mapSchools()
                     else -> {}
                 }
                 System.out.println("SYSTEM CHECKS: PAGE NUMBER ONE CONFIRMED!")
@@ -211,12 +208,7 @@ class PointHome : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun mapCareclubs() {
-        val intent = Intent(this, Careclubs::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
+
 
     private fun mapAbattoirs() {
         val intent = Intent(this, Abattoirs::class.java)
@@ -227,6 +219,13 @@ class PointHome : AppCompatActivity() {
 
     private fun mapPractitioners() {
         val intent = Intent(this, Practitioners::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
+    private fun mapSchools() {
+        val intent = Intent(this, Schools::class.java)
         intent.putExtra("lat", lat)
         intent.putExtra("lng", lng)
         startActivity(intent)
