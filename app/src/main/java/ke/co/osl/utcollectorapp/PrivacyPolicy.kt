@@ -15,7 +15,7 @@ class PrivacyPolicy: AppCompatActivity() {
         val text = findViewById<TextView>(R.id.text)
 
         back.setOnClickListener {
-            startActivity(Intent(this, Incidences::class.java))
+            startActivity(Intent(this, Home::class.java))
         }
 
         text.setText("PRIVACY POLICY\n" +

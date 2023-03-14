@@ -83,7 +83,7 @@ class PointHome : AppCompatActivity() {
         tally = findViewById(R.id.tally)
         back = findViewById(R.id.back)
 
-        showTotal()
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             requestLocationPermission()
         }
@@ -106,7 +106,7 @@ class PointHome : AppCompatActivity() {
                 coords.text = txt1
                 adjustMarker(lng, lat)
                 getLocationUpdates()
-                showTotal()
+
             } else {
                 getLocationUpdates()
                 Toast.makeText(this, "Location not acquired! Please wait", Toast.LENGTH_SHORT)
@@ -180,11 +180,6 @@ class PointHome : AppCompatActivity() {
         }
 
         //Refresh Map
-        refresh.setOnClickListener {
-            refreshMap()
-            getLocationUpdates()
-            showTotal()
-        }
 
         //Back to HomePage
         back.setOnClickListener {
@@ -245,41 +240,14 @@ class PointHome : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun mapCustomerMeters() {
-        val intent = Intent(this, Form1::class.java)
-        intent.putExtra("lat", lat)
-        intent.putExtra("lng", lng)
-        startActivity(intent)
-    }
+
 
     private fun showSSLErrorDialog(handler: SslErrorHandler?) {
         handler?.proceed()
     }
 
     //Display totals
-    private fun showTotal() {
 
-        val apiInterface = ApiInterface.create().showTotalMapped()
-
-        apiInterface.enqueue(object :
-            Callback<Message> {
-            override fun onResponse(
-                call: Call<Message>?,
-                response: Response<Message>?
-            ) {
-                if (response?.body()?.success !== null) {
-                    tally.text = "Total Mapped: " + response?.body()?.success
-                }
-            }
-
-            override fun onFailure(
-                call: Call<ke.co.osl.utcollectorapp.models.Message>,
-                t: Throwable
-            ) {
-                tally.text = "Total is not being displayed!"
-            }
-        })
-    }
 
     private fun refreshMap() {
         webView.loadUrl(ip_URL)

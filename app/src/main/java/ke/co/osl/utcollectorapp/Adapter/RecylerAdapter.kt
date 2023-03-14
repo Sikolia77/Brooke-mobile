@@ -10,8 +10,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import ke.co.osl.utcollectorapp.Forms.*
-import ke.co.osl.utcollectorapp.LineHome
 import ke.co.osl.utcollectorapp.Params
 import ke.co.osl.utcollectorapp.PointHome
 import ke.co.osl.utcollectorapp.R

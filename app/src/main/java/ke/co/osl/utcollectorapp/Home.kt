@@ -196,10 +196,6 @@ class Home : AppCompatActivity() {
         showResetPasswordDialog(resetPasswordDialog)
     }
 
-    //Display List of Water Meter Customers
-    private fun mappedPoints() {
-        startActivity(Intent(this@Home, MappedPoints::class.java))
-    }
 
     //Sign Out User
     private fun signOut() {
