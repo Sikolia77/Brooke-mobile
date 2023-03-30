@@ -113,22 +113,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="Account Number *"
+                android:text="County *"
                 android:textColor="@color/black"
 
                 />
 
             <EditText
-                android:id="@+id/acc_number"
+                android:id="@+id/county"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Client Account Number"
+                android:hint="County"
                 android:textColor="@color/dark_green"
-                android:inputType="number"
+                android:inputType="text"
                 android:background="@drawable/input_green_border"
                 android:padding="10dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -141,20 +141,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Meter Number"
+            android:text="Town"
             android:textColor="@color/black"
 
             />
 
         <EditText
-            android:id="@+id/meter_number"
+            android:id="@+id/town"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:hint="Meter Number"
+            android:hint="Town"
             android:inputType="text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/dark_green"
@@ -164,73 +164,6 @@
             />
         <!--    Text input end-->
 
-
-        <!--    Text input start-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Meter Size"
-            android:textColor="@color/black"
-
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            >
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/meter_size"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/dark_green"
-                android:entries="@array/meter_size"
-                android:spinnerMode="dropdown"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/dark_green" />
-        </LinearLayout>
-
-        <!--    Text input end-->
-
-
-        <!--    Text input start-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Meter Status"
-            android:textColor="@color/black"
-
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            >
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/meter_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/meter_status"
-                android:spinnerMode="dropdown"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/dark_green"
-                android:padding="2dp"
-                />
-        </LinearLayout>
-        <!--    Text input end-->
 
             <TextView
                 android:layout_width="match_parent"
