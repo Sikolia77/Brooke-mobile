@@ -65,12 +65,27 @@
         <item>Institutions</item>
         <item>Commercial</item>
     </string-array>
+
+    <string-array name="choices">
+        <item>YES</item>
+        <item>NO</item>
+    </string-array>
+
     <string-array name="account_status">
         <item>Active</item>
         <item>Sealed</item>
         <item>Dormant</item>
         <item>Closed</item>
         <item>Cut-off</item>
+    </string-array>
+
+    <string-array name="education">
+        <item>Primary</item>
+        <item>Secondary</item>
+        <item>Diploma</item>
+        <item>Bachelors</item>
+        <item>Masters</item>
+        <item>PhD</item>
     </string-array>
 
     <string-array name="status">

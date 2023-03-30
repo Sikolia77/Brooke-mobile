@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Account Status"
+            android:text="Education"
             android:textColor="@color/black"
 
             />
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:entries="@array/account_status"
+                android:entries="@array/education"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"
                 />
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Connection Status"
+            android:text="Is Agrovet Attendant Registered?"
             android:textColor="@color/black"
             
             android:layout_marginBottom="10dp"
@@ -134,10 +134,10 @@
             android:background="@drawable/input_green_border"
             >
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/conn_status"
+                android:id="@+id/registration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/conn_status"
+                android:entries="@array/choices"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"
@@ -151,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Meter Brand"
+            android:text="Is Agrovet Premises Registered?"
             android:textColor="@color/black"
             />
 
@@ -165,10 +165,10 @@
             android:background="@drawable/input_green_border"
             >
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/brand"
+                android:id="@+id/premises"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/brand"
+                android:entries="@array/choices"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"
@@ -180,7 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Meter Material"
+            android:text="Is Agrovet Registered for Pest Control?"
             android:textColor="@color/black"
             />
 
@@ -194,10 +194,10 @@
             android:background="@drawable/input_green_border"
             >
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/material"
+                android:id="@+id/pest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/material"
+                android:entries="@array/choices"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"
@@ -211,7 +211,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Class"
+            android:text="Is Agrovet Location Labelled?"
             android:textColor="@color/black"
             />
 
@@ -225,10 +225,10 @@
             android:background="@drawable/input_green_border"
             >
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/mclass"
+                android:id="@+id/labelling"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/classs"
+                android:entries="@array/choices"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"

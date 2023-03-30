@@ -17,16 +17,16 @@
         android:orientation="horizontal"
         android:background="@color/green"
         >
-
         <TextView
             android:id="@+id/appbar_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Other Details"
+            android:text="Account Details"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:textSize="18sp"
             />
         <ImageView
             android:id="@+id/back"
@@ -40,257 +40,341 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-    <ScrollView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <TextView
+        <ScrollView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Add Other Details"
-            android:textColor="@color/dark_green"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="All fields marked with * are required"
-            android:textColor="@color/black"
-            />
-
-        <TextView
-            android:id="@+id/error"
-            android:layout_width="match_parent"
-            android:height="24dp"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:text=""
-            android:textColor="@color/orange"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scheme Name"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            >
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/schemeName"
+            android:layout_height="wrap_content">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/scheme_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/dark_green"
-                android:backgroundTint="@color/dark_green"
-                android:spinnerMode="dropdown"
-                />
-        </LinearLayout>
+                android:orientation="vertical"
+                >
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Add Account Details"
+                    android:textColor="@color/dark_green"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Zone"
-            android:textColor="@color/black"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textSize="12dp"
-            />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="All fields marked with * are required"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            >
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/zone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/zone"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/dark_green"
-                android:backgroundTint="@color/dark_green"
-                android:spinnerMode="dropdown"
-                />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/error"
+                    android:layout_width="match_parent"
+                    android:height="24dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/orange"
+                    android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Route"
-            android:textColor="@color/black"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textSize="12sp"
-            />
-        <EditText
-            android:id="@+id/route"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textSize="12sp"
-            android:hint="Route"
-            android:textColor="@color/dark_green"
-            />
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Medicine Dispense History Token"
+                    android:textColor="@color/black"
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/input_green_border"-->
-<!--            android:layout_marginStart="24dp"-->
-<!--            android:layout_marginEnd="24dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            >-->
-<!--            <androidx.appcompat.widget.AppCompatSpinner-->
-<!--                android:id="@+id/route"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:entries="@array/route"-->
-<!--                android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
-<!--                android:textColor="@color/dark_green"-->
-<!--                android:backgroundTint="@color/dark_green"-->
-<!--                android:spinnerMode="dropdown"-->
-<!--                />-->
-<!--        </LinearLayout>-->
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border">
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/dispense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:entries="@array/choices"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
 
+                </LinearLayout>
+                <!--    Text input end-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DMA *"
-            android:layout_marginEnd="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            />
-        <EditText
-            android:id="@+id/dma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_green_border"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textSize="12sp"
-            android:hint="DMA"
-            android:textColor="@color/dark_green"
-            />
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Vital Historical Questions Asked"
+                    android:textColor="@color/black"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Location"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
+                    android:layout_marginBottom="10dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/vital"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+                <!--    Text input end-->
 
-        <EditText
-            android:id="@+id/location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/input_green_border"
-            android:hint="Location"
-            android:padding="10dp"
-            android:textColor="@color/dark_green"
-            android:textSize="12sp" />
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="History Taken Using Mixed Questions"
+                    android:textColor="@color/black"
+                    />
 
-        <!--    Text input start-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Remarks"
-            android:textColor="@color/black"
-            />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Involves Owner in Decision Making Process"
+                    android:textColor="@color/black"
+                    />
 
-        <EditText
-            android:id="@+id/remarks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/dark_green"
-            android:background="@drawable/input_green_border"
-            android:padding="10dp"
-            />
-        <!--    Text input end-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/decisionmaking"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+                <!--    Text input end-->
 
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Explains Future Prevention and Management"
+                    android:textColor="@color/black"
+                    />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/prevention"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
 
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Explains Side Effects and Contradictions"
+                    android:textColor="@color/black"
+                    />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dark_green_button"
-            android:paddingStart="30dp"
-            android:paddingRight="30dp"
-            android:text="Submit"
-            android:textSize="14sp"
-            android:textAllCaps="false"
-            android:textColor="@color/light_orange"
-            android:layout_gravity="center"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="10dp"
-            />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/effects"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
 
-    </LinearLayout>
-    </ScrollView>
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Referral to LHPs"
+                    android:textColor="@color/black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/referral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Follow Up and Advice Planned"
+                    android:textColor="@color/black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/followup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Good Agrovet Attendant Conduct"
+                    android:textColor="@color/black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/conduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/next"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dark_green_button"
+                    android:paddingStart="30dp"
+                    android:paddingRight="30dp"
+                    android:text="Submit"
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light_orange"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
