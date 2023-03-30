@@ -41,11 +41,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Home" />
+        <activity android:name=".Monitoring" />
         <activity android:name=".PointHome" />
         <activity android:name=".LoginPage" />
         <activity android:name=".PrivacyPolicy" />
         <activity android:name=".About" />
-        <activity android:name=".Forms.PointProjects" />
         <activity android:name=".Forms.Agrovets" />
         <activity android:name=".Forms.Farriers" />
         <activity android:name=".Forms.EquineOwners" />

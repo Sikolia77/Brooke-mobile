@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.auth0.android.jwt.JWT
 import com.google.android.gms.location.*
 import com.google.android.material.navigation.NavigationView
+import ke.co.osl.utcollectorapp.Adapter.MonitoringAdapter
 import ke.co.osl.utcollectorapp.Adapter.RecylerAdapter
 import ke.co.osl.utcollectorapp.api.ApiInterface
 import ke.co.osl.utcollectorapp.models.ChangePasswordBody
@@ -42,7 +43,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Home : AppCompatActivity() {
+class Monitoring : AppCompatActivity() {
 
     lateinit var dialog: Dialog
     lateinit var toolbar: Toolbar
@@ -114,7 +115,7 @@ class Home : AppCompatActivity() {
 
         waterRecycler.setHasFixedSize(true)
         waterRecycler.layoutManager = GridLayoutManager(this, 2)
-        val waterAdapter = RecylerAdapter(addWaterList(),this)
+        val waterAdapter = MonitoringAdapter(addWaterList(),this)
         waterRecycler.adapter = waterAdapter
 
 
@@ -185,11 +186,11 @@ class Home : AppCompatActivity() {
 
 
     private fun goHome() {
-        startActivity(Intent(this@Home, LoginPage::class.java))
+        startActivity(Intent(this@Monitoring, LoginPage::class.java))
     }
 
     private fun goMonitoring() {
-        startActivity(Intent(this@Home, LoginPage::class.java))
+        startActivity(Intent(this@Monitoring, LoginPage::class.java))
     }
 
     private fun showUserInfo() {
@@ -206,7 +207,7 @@ class Home : AppCompatActivity() {
     private fun signOut() {
         editor.remove("token")
         editor.commit()
-        startActivity(Intent(this@Home, LoginPage::class.java))
+        startActivity(Intent(this@Monitoring, LoginPage::class.java))
         finish()
     }
 
@@ -270,7 +271,7 @@ class Home : AppCompatActivity() {
                         editor.remove("token")
                         editor.commit()
                         error.text = "Logout successful!"
-                        startActivity(Intent(this@Home, LoginPage::class.java))
+                        startActivity(Intent(this@Monitoring, LoginPage::class.java))
                     } else {
                         editor.putString("token", "")
                         editor.commit()
