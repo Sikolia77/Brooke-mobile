@@ -174,7 +174,7 @@
                 android:textColor="@color/black"
                 />
 
-            <TextView
+            <EditText
                 android:id="@+id/unit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,7 +200,7 @@
                 android:textColor="@color/black"
                 />
 
-            <TextView
+            <EditText
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,7 +226,7 @@
                 android:textColor="@color/black"
                 />
 
-            <TextView
+            <EditText
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
                 android:textColor="@color/black"
                 />
 
-            <TextView
+            <EditText
                 android:id="@+id/quater"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -278,7 +278,7 @@
                 android:textColor="@color/black"
                 />
 
-            <TextView
+            <EditText
                 android:id="@+id/project"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

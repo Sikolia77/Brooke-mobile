@@ -98,4 +98,7 @@ interface ApiInterface {
         @GET("farriers/details/{id}")
         fun searchFarrier(@Path("id") id: String) : Call<List<FarrierGetBody>>
 
+        @POST("agrovets/monitoring/create")
+        fun postAgrovetsMonitoring(@Body agrovetMonitoringBody: AgrovetMonitoringBody) : Call<Message>
+
         }
