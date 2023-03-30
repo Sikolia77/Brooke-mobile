@@ -189,7 +189,7 @@ class Home : AppCompatActivity() {
     }
 
     private fun goMonitoring() {
-        startActivity(Intent(this@Home, LoginPage::class.java))
+        startActivity(Intent(this@Home, Monitoring::class.java))
     }
 
     private fun showUserInfo() {
