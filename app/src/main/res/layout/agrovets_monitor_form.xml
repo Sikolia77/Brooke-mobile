@@ -170,12 +170,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="User"
+                android:text="Operational Unit"
                 android:textColor="@color/black"
                 />
 
             <TextView
-                android:id="@+id/user"
+                android:id="@+id/unit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -183,11 +183,120 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:hint="Operational Unit"
+                android:inputType="text"
                 android:textColor="@color/dark_green"
                 android:background="@drawable/input_green_border"
                 android:padding="10dp"
                 />
             <!--    Text input end-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Agrovet Location"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Agrovet Location"
+                android:inputType="text"
+                android:textColor="@color/dark_green"
+                android:background="@drawable/input_green_border"
+                android:padding="10dp"
+                />
+            <!--    Text input end-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Date"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Date"
+                android:inputType="text"
+                android:textColor="@color/dark_green"
+                android:background="@drawable/input_green_border"
+                android:padding="10dp"
+                />
+            <!--    Text input end-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Quater"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/quater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Quater"
+                android:inputType="text"
+                android:textColor="@color/dark_green"
+                android:background="@drawable/input_green_border"
+                android:padding="10dp"
+                />
+            <!--    Text input end-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Project"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Project"
+                android:inputType="text"
+                android:textColor="@color/dark_green"
+                android:background="@drawable/input_green_border"
+                android:padding="10dp"
+                />
+            <!--    Text input end-->
+
+
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next"
