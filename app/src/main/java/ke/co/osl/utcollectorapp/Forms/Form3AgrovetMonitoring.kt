@@ -20,7 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class Form2AgrovetMonitoring: AppCompatActivity() {
+class Form3AgrovetMonitoring: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
@@ -28,7 +28,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agrovets_monitor_form2)
+        setContentView(R.layout.agrovets_monitor_form3)
 
         preferences = this.getSharedPreferences("ut_manager", MODE_PRIVATE)
         editor = preferences.edit()
@@ -79,25 +79,33 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
-        val education = findViewById<Spinner>(R.id.education)
-        val registration = findViewById<Spinner>(R.id.registration)
-        val premises = findViewById<Spinner>(R.id.premises)
-        val pest = findViewById<Spinner>(R.id.pest)
-        val labelling = findViewById<Spinner>(R.id.labelling)
+        val dispense = findViewById<Spinner>(R.id.dispense)
+        val vital = findViewById<Spinner>(R.id.vital)
+        val history = findViewById<Spinner>(R.id.history)
+        val decisionmaking = findViewById<Spinner>(R.id.decisionmaking)
+        val prevention = findViewById<Spinner>(R.id.prevention)
+        val effects = findViewById<Spinner>(R.id.effects)
+        val referral = findViewById<Spinner>(R.id.referral)
+        val followup = findViewById<Spinner>(R.id.followup)
+        val conduct = findViewById<Spinner>(R.id.conduct)
 
         next.setOnClickListener {
             error.text = ""
 
             progress.visibility = View.VISIBLE
-            val agrovetMonitoringBody = AgrovetMonitoringBody2(
-                education.selectedItem.toString(),
-                registration.selectedItem.toString(),
-                premises.selectedItem.toString(),
-                pest.selectedItem.toString(),
-                labelling.selectedItem.toString()
+            val agrovetMonitoringBody3 = AgrovetMonitoringBody3(
+                dispense.selectedItem.toString(),
+                vital.selectedItem.toString(),
+                history.selectedItem.toString(),
+                decisionmaking.selectedItem.toString(),
+                prevention.selectedItem.toString(),
+                effects.selectedItem.toString(),
+                referral.selectedItem.toString(),
+                followup.selectedItem.toString(),
+                conduct.selectedItem.toString()
             )
             val id=intent.getStringExtra("id")
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody)
+            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,agrovetMonitoringBody3)
 
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
@@ -105,7 +113,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@Form2AgrovetMonitoring, Form3AgrovetMonitoring::class.java)
+                        val intent = Intent(this@Form3AgrovetMonitoring, Form1AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")
                         startActivity(intent)

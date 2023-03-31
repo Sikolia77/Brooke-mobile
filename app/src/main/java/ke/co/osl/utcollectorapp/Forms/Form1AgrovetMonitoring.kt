@@ -127,7 +127,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                     progress.visibility = View.GONE
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@Form1AgrovetMonitoring, Agrovets::class.java)
+                        val intent = Intent(this@Form1AgrovetMonitoring, Form2AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")
                         startActivity(intent)

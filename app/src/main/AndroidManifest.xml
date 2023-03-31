@@ -53,6 +53,9 @@
         <activity android:name=".Forms.Practitioners" />
         <activity android:name=".Forms.Abattoirs" />
         <activity android:name=".Forms.Schools" />
+        <activity android:name=".Forms.Form1AgrovetMonitoring" />
+        <activity android:name=".Forms.Form2AgrovetMonitoring" />
+        <activity android:name=".Forms.Form3AgrovetMonitoring" />
     </application>
 
 </manifest>

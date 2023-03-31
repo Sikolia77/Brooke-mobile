@@ -101,7 +101,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/input_green_border">
             <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/acc_status"
+                android:id="@+id/education"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
