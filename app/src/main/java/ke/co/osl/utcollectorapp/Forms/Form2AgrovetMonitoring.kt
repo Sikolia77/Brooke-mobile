@@ -9,10 +9,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.auth0.android.jwt.JWT
-import ke.co.osl.utcollectorapp.Home
-import ke.co.osl.utcollectorapp.LoginPage
-import ke.co.osl.utcollectorapp.PointHome
-import ke.co.osl.utcollectorapp.R
+import ke.co.osl.utcollectorapp.*
 import ke.co.osl.utcollectorapp.api.ApiInterface
 import ke.co.osl.utcollectorapp.models.*
 import retrofit2.Call
@@ -32,16 +29,6 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
 
         preferences = this.getSharedPreferences("ut_manager", MODE_PRIVATE)
         editor = preferences.edit()
-
-
-
-        val jwt = JWT(preferences.getString("token","gsdhjdsajfdsjkfdjk:gsdhjsdhjsdjhsdsdfjhsdfjh:ghsdghdsghvgdsh")!!)
-        if (jwt.expiresAt!!.before(Date())) {
-            startActivity(Intent(this, LoginPage::class.java))
-            finish()
-        }else {
-            user.text = jwt.getClaim("Name").asString()
-        }
 
         val back = findViewById<ImageView>(R.id.back)
         back.setOnClickListener {
@@ -86,41 +73,47 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
         val labelling = findViewById<Spinner>(R.id.labelling)
 
         next.setOnClickListener {
-            error.text = ""
-
-            progress.visibility = View.VISIBLE
-            val agrovetMonitoringBody = AgrovetMonitoringBody2(
-                education.selectedItem.toString(),
-                registration.selectedItem.toString(),
-                premises.selectedItem.toString(),
-                pest.selectedItem.toString(),
-                labelling.selectedItem.toString()
-            )
-            val id=intent.getStringExtra("id")
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody)
-
-            apiInterface.enqueue( object : Callback<Message> {
-                override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
-                    progress.visibility = View.GONE
-                    System.out.println(response?.body())
-                    if(response?.body()?.success !== null){
-                        error.text = response?.body()?.success
-                        val intent = Intent(this@Form2AgrovetMonitoring, Form3AgrovetMonitoring::class.java)
-                        intent.putExtra("id",response?.body()?.token)
-                        intent.putExtra("isUpdating", "false")
-                        startActivity(intent)
-                    }
-                    else {
-                        error.text = response?.body()?.error
-                    }
-                }
-                override fun onFailure(call: Call<Message>?, t: Throwable?) {
-                    System.out.println(t)
-                    progress.visibility = View.GONE
-                    error.text = "Connection to server failed"
-                }
-            })
+            val intent = Intent(this@Form2AgrovetMonitoring, Monitoring::class.java)
+                startActivity(intent)
         }
+
+//        next.setOnClickListener {
+//            error.text = ""
+//
+//            progress.visibility = View.VISIBLE
+//            val agrovetMonitoringBody = AgrovetMonitoringBody2(
+//                education.selectedItem.toString(),
+//                registration.selectedItem.toString(),
+//                premises.selectedItem.toString(),
+//                pest.selectedItem.toString(),
+//                labelling.selectedItem.toString()
+//            )
+//            val id=intent.getStringExtra("id")
+//            System.out.println("the id is $id");
+//            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody)
+//
+//            apiInterface.enqueue( object : Callback<Message> {
+//                override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
+//                    progress.visibility = View.GONE
+//                    System.out.println(response?.body())
+//                    if(response?.body()?.success !== null){
+//                        error.text = response?.body()?.success
+//                        val intent = Intent(this@Form2AgrovetMonitoring, Form3AgrovetMonitoring::class.java)
+//                        intent.putExtra("id",response?.body()?.token)
+//                        intent.putExtra("isUpdating", "false")
+//                        startActivity(intent)
+//                    }
+//                    else {
+//                        error.text = response?.body()?.error
+//                    }
+//                }
+//                override fun onFailure(call: Call<Message>?, t: Throwable?) {
+//                    System.out.println(t)
+//                    progress.visibility = View.GONE
+//                    error.text = "Connection to server failed"
+//                }
+//            })
+//        }
 
     }
 

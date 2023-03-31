@@ -43,7 +43,7 @@ class MonitoringAdapter (private val paramList:ArrayList<Params>, val context: C
         init {
             item.setOnClickListener {
                 when(textView.text){
-                    "Agrovets" -> mapAgrovets()
+                    "AgrovetsMonitoring" -> mapAgrovets()
                     "Farriers" -> mapFarriers()
                     "Careclubs" -> mapCareclubs()
                     "Equineowners" -> mapEquineowners()
@@ -59,7 +59,7 @@ class MonitoringAdapter (private val paramList:ArrayList<Params>, val context: C
         private fun mapAgrovets() {
             val intent = Intent(context, PointHome::class.java)
             intent.putExtra("isUpdating", false)
-            intent.putExtra("MappedItem", "Agrovets")
+            intent.putExtra("MappedItem", "AgrovetsMonitoring")
             context.startActivity(intent)
         }
 

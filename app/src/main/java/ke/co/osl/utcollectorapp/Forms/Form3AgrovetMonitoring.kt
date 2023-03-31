@@ -33,16 +33,6 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
         preferences = this.getSharedPreferences("ut_manager", MODE_PRIVATE)
         editor = preferences.edit()
 
-
-
-        val jwt = JWT(preferences.getString("token","gsdhjdsajfdsjkfdjk:gsdhjsdhjsdjhsdsdfjhsdfjh:ghsdghdsghvgdsh")!!)
-        if (jwt.expiresAt!!.before(Date())) {
-            startActivity(Intent(this, LoginPage::class.java))
-            finish()
-        }else {
-            user.text = jwt.getClaim("Name").asString()
-        }
-
         val back = findViewById<ImageView>(R.id.back)
         back.setOnClickListener {
             startActivity(Intent(this, PointHome::class.java))

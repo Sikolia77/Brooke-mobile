@@ -101,10 +101,10 @@ interface ApiInterface {
         @POST("agrovets/monitoring/create")
         fun postAgrovetsMonitoring(@Body agrovetMonitoringBody: AgrovetMonitoringBody) : Call<Message>
 
-        @PUT("agrovets/monitoring//{id}")
+        @PUT("agrovets/monitoring/{id}")
         fun postAgrovetsMonitoringForm2(@Path("id") id: String, @Body agrovetMonitoringBody: AgrovetMonitoringBody2) : Call<Message>
 
-        @PUT("agrovets/monitoring//{id}")
+        @PUT("agrovets/monitoring/{id}")
         fun postAgrovetsMonitoringForm3(@Path("id") id: String, @Body agrovetMonitoringBody3: AgrovetMonitoringBody3) : Call<Message>
 
 
