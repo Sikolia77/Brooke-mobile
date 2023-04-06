@@ -72,8 +72,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
         val pest = findViewById<Spinner>(R.id.pest)
         val labelling = findViewById<Spinner>(R.id.labelling)
 
-        next.setOnClickListener {
-            val intent = Intent(this@Form2AgrovetMonitoring, Monitoring::class.java)
+        next.setOnClickListener {val intent = Intent(this@Form2AgrovetMonitoring, Monitoring::class.java)
                 startActivity(intent)
         }
 
