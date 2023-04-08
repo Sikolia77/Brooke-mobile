@@ -42,6 +42,7 @@
         </activity>
         <activity android:name=".Home" />
         <activity android:name=".Monitoring" />
+        <activity android:name=".Tools" />
         <activity android:name=".PointHome" />
         <activity android:name=".LoginPage" />
         <activity android:name=".PrivacyPolicy" />

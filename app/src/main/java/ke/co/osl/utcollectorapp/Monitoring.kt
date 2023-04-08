@@ -89,7 +89,6 @@ class Monitoring : AppCompatActivity() {
                 R.id.changePassword -> changePassword()
                 R.id.userDetails -> showUserInfo()
                 R.id.logout -> signOut()
-                R.id.monitoringTool -> goMonitoring()
             }
 
             true
@@ -151,23 +150,23 @@ class Monitoring : AppCompatActivity() {
     private fun addWaterList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
         paramList.add(Params(R.drawable.agrovet, "AgrovetsMonitoring"))
-        paramList.add(Params(R.drawable.farrier, "Farriers"))
-        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
+//        paramList.add(Params(R.drawable.farrier, "Farriers"))
+//        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
         return paramList
     }
 
     private fun addSewerList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.veterinarian, "Abattoirs"))
+//        paramList.add(Params(R.drawable.veterinarian, "Abattoirs"))
         return paramList
     }
 
     private fun addProjectList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.cawas, "Equineowners"))
-        paramList.add(Params(R.drawable.community, "CommunityGroups"))
-        paramList.add(Params(R.drawable.school, "Schools"))
+//        paramList.add(Params(R.drawable.cawas, "Equineowners"))
+//        paramList.add(Params(R.drawable.community, "CommunityGroups"))
+//        paramList.add(Params(R.drawable.school, "Schools"))
 
         return paramList
     }
@@ -186,12 +185,10 @@ class Monitoring : AppCompatActivity() {
 
 
     private fun goHome() {
-        startActivity(Intent(this@Monitoring, LoginPage::class.java))
+        startActivity(Intent(this@Monitoring, Tools::class.java))
     }
 
-    private fun goMonitoring() {
-        startActivity(Intent(this@Monitoring, LoginPage::class.java))
-    }
+
 
     private fun showUserInfo() {
         showUserDetails(userDetailsDialog)

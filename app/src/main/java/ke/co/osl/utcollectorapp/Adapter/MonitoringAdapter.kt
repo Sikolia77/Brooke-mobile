@@ -35,8 +35,6 @@ class MonitoringAdapter (private val paramList:ArrayList<Params>, val context: C
     class ParamViewHolder(itemView:View,val context: Context) : RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val textView: TextView = itemView.findViewById(R.id.textView)
-        val options: LinearLayout = itemView.findViewById(R.id.options)
-        val addnew: LinearLayout = itemView.findViewById(R.id.addnew)
         val update: LinearLayout = itemView.findViewById(R.id.update)
         val item: CardView = itemView.findViewById(R.id.item)
 

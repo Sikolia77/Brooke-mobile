@@ -78,7 +78,7 @@ class LoginPage: AppCompatActivity() {
                         editor.putString("token",response?.body()?.token!!)
 
                         editor.commit()
-                        startActivity(Intent(this@LoginPage,Home::class.java))
+                        startActivity(Intent(this@LoginPage,Tools::class.java))
                         finish()
                     }
                     else {

@@ -50,6 +50,7 @@
             android:src="@drawable/ic_settings" />
 
     </LinearLayout>
+
     </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

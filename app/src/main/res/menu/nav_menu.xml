@@ -20,10 +20,6 @@
                     android:icon="@drawable/ic_account_circle"
                     android:title="User details" />
 
-                <item
-                    android:id="@+id/monitoringTool"
-                    android:icon="@drawable/ic_account_circle"
-                    android:title="Monitoring Tool" />
 
                 <item
                     android:id="@+id/logout"

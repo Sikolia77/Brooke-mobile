@@ -88,7 +88,6 @@ class Home : AppCompatActivity() {
                 R.id.changePassword -> changePassword()
                 R.id.userDetails -> showUserInfo()
                 R.id.logout -> signOut()
-                R.id.monitoringTool -> goMonitoring()
             }
 
             true
@@ -188,9 +187,7 @@ class Home : AppCompatActivity() {
         startActivity(Intent(this@Home, LoginPage::class.java))
     }
 
-    private fun goMonitoring() {
-        startActivity(Intent(this@Home, Monitoring::class.java))
-    }
+
 
     private fun showUserInfo() {
         showUserDetails(userDetailsDialog)
