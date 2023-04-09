@@ -118,21 +118,25 @@
 
                 />
 
-            <EditText
-                android:id="@+id/county"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="County"
-                android:textColor="@color/dark_green"
-                android:inputType="text"
                 android:background="@drawable/input_green_border"
-                android:padding="10dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                />
+                >
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/county"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/county"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/dark_green"
+                    android:spinnerMode="dropdown"
+                    />
+            </LinearLayout>
             <!--    Text input end-->
 
              <!--    Text input start-->
