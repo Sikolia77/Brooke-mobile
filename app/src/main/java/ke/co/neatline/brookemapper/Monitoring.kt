@@ -103,7 +103,7 @@ class Monitoring : AppCompatActivity() {
 
     private fun addWaterList():ArrayList<Params> {
         var paramList:ArrayList<Params> = ArrayList()
-        paramList.add(Params(R.drawable.agrovet, "Agrovets"))
+        paramList.add(Params(R.drawable.agrovetsmonitoring, "Agrovets"))
 //        paramList.add(Params(R.drawable.farrier, "Farriers"))
 //        paramList.add(Params(R.drawable.veterinarian, "Practitioners"))
 
