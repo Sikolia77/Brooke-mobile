@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Farmer Mapping App"
+rootProject.name = "Brooke Mobile"

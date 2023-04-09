@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ke.co.osl.brookemapper">
+    package="ke.co.neatline.brookemapper">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -32,7 +32,7 @@
             </meta-data>
         </provider>
 
-        <activity android:name="ke.co.osl.brookemapper.LandingPage"
+        <activity android:name="ke.co.neatline.brookemapper.LandingPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,23 +40,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ke.co.osl.brookemapper.Home" />
-        <activity android:name="ke.co.osl.brookemapper.Monitoring" />
-        <activity android:name="ke.co.osl.brookemapper.Tools" />
-        <activity android:name="ke.co.osl.brookemapper.PointHome" />
-        <activity android:name="ke.co.osl.brookemapper.LoginPage" />
-        <activity android:name="ke.co.osl.brookemapper.PrivacyPolicy" />
-        <activity android:name="ke.co.osl.brookemapper.About" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Agrovets" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Farriers" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.EquineOwners" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.CommunityGroups" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Practitioners" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Abattoirs" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Schools" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Form1AgrovetMonitoring" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Form2AgrovetMonitoring" />
-        <activity android:name="ke.co.osl.brookemapper.Forms.Form3AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Home" />
+        <activity android:name="ke.co.neatline.brookemapper.Monitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Tools" />
+        <activity android:name="ke.co.neatline.brookemapper.PointHome" />
+        <activity android:name="ke.co.neatline.brookemapper.LoginPage" />
+        <activity android:name="ke.co.neatline.brookemapper.PrivacyPolicy" />
+        <activity android:name="ke.co.neatline.brookemapper.About" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Agrovets" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Farriers" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.EquineOwners" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.CommunityGroups" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Practitioners" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Abattoirs" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Schools" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form1AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form2AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form3AgrovetMonitoring" />
     </application>
 
 </manifest>
