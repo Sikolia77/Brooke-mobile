@@ -7,6 +7,7 @@ data class CareclubGetBody(
    val Contact:String,
    val Patron:String,
    val ClubLevel:String,
+   val Country: String,
    val County: String,
    val SubCounty: String,
    val Ward:String,

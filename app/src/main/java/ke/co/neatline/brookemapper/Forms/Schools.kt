@@ -126,6 +126,7 @@ class Schools: AppCompatActivity() {
         val contact = findViewById<EditText>(R.id.contact)
         val patron = findViewById<EditText>(R.id.patron)
         val clublevel = findViewById<Spinner>(R.id.schoollevel)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -149,6 +150,7 @@ class Schools: AppCompatActivity() {
                 contact.text.toString(),
                 patron.text.toString(),
                 clublevel.selectedItem.toString(),
+                country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 lng,
                 lat,
@@ -194,6 +196,7 @@ class Schools: AppCompatActivity() {
         val contact = findViewById<EditText>(R.id.contact)
         val patron = findViewById<EditText>(R.id.patron)
         val clublevel = findViewById<Spinner>(R.id.schoollevel)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -207,6 +210,7 @@ class Schools: AppCompatActivity() {
         contact.setText(body.Contact)
         patron.setText(body.Patron)
         updateSpinner(clublevel,body.ClubLevel)
+        updateSpinner(country,body.Country)
         updateSpinner(county,body.County)
         subcounty.setText(body.SubCounty)
         ward.setText(body.Ward)
@@ -227,6 +231,7 @@ class Schools: AppCompatActivity() {
                 contact.text.toString(),
                 patron.text.toString(),
                 clublevel.selectedItem.toString(),
+                country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 subcounty.text.toString(),
                 ward.text.toString(),

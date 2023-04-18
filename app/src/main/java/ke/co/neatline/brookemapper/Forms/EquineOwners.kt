@@ -123,6 +123,7 @@ class EquineOwners: AppCompatActivity() {
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
         val name = findViewById<EditText>(R.id.name)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -149,6 +150,7 @@ class EquineOwners: AppCompatActivity() {
             progress.visibility = View.VISIBLE
             val equineownersBody = EquineOwnersBody(
                 name.text.toString(),
+                country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 lng,
                 lat,
@@ -192,6 +194,7 @@ class EquineOwners: AppCompatActivity() {
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
         val name = findViewById<EditText>(R.id.name)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -203,6 +206,7 @@ class EquineOwners: AppCompatActivity() {
 
         //Bind data
         name.setText(body.Name)
+        updateSpinner(country,body.Country)
         updateSpinner(county,body.County)
         subcounty.setText(body.SubCounty)
         ward.setText(body.Ward)
@@ -221,6 +225,7 @@ class EquineOwners: AppCompatActivity() {
                 id,
                 objectid,
                 name.text.toString(),
+                    country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 subcounty.text.toString(),
                 ward.text.toString(),

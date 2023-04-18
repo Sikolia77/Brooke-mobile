@@ -199,6 +199,16 @@
         <item>TERTIARY</item>
     </string-array>
 
+    <string-array name="country">
+        <item></item>
+        <item>KENYA</item>
+        <item>UGANDA</item>
+        <item>TANZANIA</item>
+        <item>RWANDA</item>
+        <item>BURUNDI</item>
+        <item>SOMALIA</item>
+    </string-array>
+
     <string-array name="scheme_name">
         <item>RURAL</item>
         <item>URBAN</item>

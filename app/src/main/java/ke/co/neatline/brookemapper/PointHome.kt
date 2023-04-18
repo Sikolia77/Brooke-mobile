@@ -158,7 +158,8 @@ class PointHome : AppCompatActivity() {
             if(lat !== 0.0 && lng !== 0.0){
                 when(mappedItem){
                     "Abattoirs" -> mapAbattoirs()
-                    "AgrovetsMonitoring" -> mapAgrovets()
+                    "Agrovets" -> mapAgrovets()
+                    "AgrovetsMonitoring" -> mapAgrovetsMonitoring()
                     "Farriers" -> mapFarriers()
                     "Equine Owners" -> mapEquineowners()
                     "Community Groups" -> mapCommunityGroups()
@@ -183,7 +184,7 @@ class PointHome : AppCompatActivity() {
     }
 
 
-    private fun mapAgrovets() {
+    private fun mapAgrovetsMonitoring() {
         val intent = Intent(this, Form1AgrovetMonitoring::class.java)
         intent.putExtra("lat", lat)
         intent.putExtra("lng", lng)
@@ -206,6 +207,15 @@ class PointHome : AppCompatActivity() {
         intent.putExtra("lng", lng)
         startActivity(intent)
     }
+
+    private fun mapAgrovets() {
+        val intent = Intent(this, Agrovets::class.java)
+        intent.putExtra("lat", lat)
+        intent.putExtra("lng", lng)
+        startActivity(intent)
+    }
+
+
 
     private fun mapPractitioners() {
         val intent = Intent(this, Practitioners::class.java)

@@ -5,6 +5,7 @@ data class SchoolsBody(
    val Contact:String,
    val Patron: String,
    val ClubLevel: String,
+   val Country: String,
    val County: String,
    val Longitude: Double,
    val Latitude: Double,

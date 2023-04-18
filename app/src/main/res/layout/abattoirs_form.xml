@@ -103,6 +103,38 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Country"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_green_border"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/country"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/dark_green"
+                android:backgroundTint="@color/dark_green"
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+        <!--    Text input end-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="County"
             android:textColor="@color/black"
             android:layout_marginStart="24dp"
@@ -131,7 +163,6 @@
                 />
         </LinearLayout>
         <!--    Text input end-->
-
         <!--    Text input start-->
         <TextView
             android:layout_width="match_parent"

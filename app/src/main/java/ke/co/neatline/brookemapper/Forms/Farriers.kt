@@ -125,6 +125,7 @@ class Farriers: AppCompatActivity() {
         val name = findViewById<EditText>(R.id.name)
         val contact = findViewById<EditText>(R.id.contact)
         val group = findViewById<EditText>(R.id.group)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -151,6 +152,7 @@ class Farriers: AppCompatActivity() {
                 name.text.toString(),
                 contact.text.toString(),
                 group.text.toString(),
+                country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 lng,
                 lat,
@@ -194,6 +196,7 @@ class Farriers: AppCompatActivity() {
         val name = findViewById<EditText>(R.id.name)
         val contact = findViewById<EditText>(R.id.contact)
         val group = findViewById<EditText>(R.id.group)
+        val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
         val ward = findViewById<EditText>(R.id.ward)
@@ -205,6 +208,7 @@ class Farriers: AppCompatActivity() {
         name.setText(body.Name)
         contact.setText(body.Contact)
         group.setText(body.Group)
+        updateSpinner(country,body.Country)
         updateSpinner(county,body.County)
         subcounty.setText(body.SubCounty)
         ward.setText(body.Ward)
@@ -224,6 +228,7 @@ class Farriers: AppCompatActivity() {
                 name.text.toString(),
                 contact.text.toString(),
                 group.text.toString(),
+                country.selectedItem.toString(),
                 county.selectedItem.toString(),
                 subcounty.text.toString(),
                 ward.text.toString(),

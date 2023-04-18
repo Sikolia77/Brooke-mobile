@@ -4,6 +4,7 @@ data class CommunityGroupsGetBody(
    val ID: String,
    val ObjectID: String,
    val Name:String,
+   val Country: String,
    val County: String,
    val SubCounty: String,
    val Ward:String,

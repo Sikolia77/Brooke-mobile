@@ -2,6 +2,7 @@ package ke.co.neatline.brookemapper.models
 
 data class CommunityGroupsBody(
    val Name:String,
+   val Country: String,
    val County: String,
    val Longitude: Double,
    val Latitude: Double,
