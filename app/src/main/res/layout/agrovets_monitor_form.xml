@@ -108,6 +108,38 @@
                 android:textSize="12sp" />
 
             <!--    Text input start-->
+            <!--    Text input start-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Country *"
+                android:textColor="@color/black"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/input_green_border"
+                >
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/country"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/dark_green"
+                    android:spinnerMode="dropdown"
+                    />
+            </LinearLayout>
+            <!--    Text input end-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

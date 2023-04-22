@@ -100,11 +100,21 @@ interface ApiInterface {
         @POST("agrovets/monitoring/create")
         fun postAgrovetsMonitoring(@Body agrovetMonitoringBody: AgrovetMonitoringBody) : Call<Message>
 
+        @GET("agrovets/monitoring/details/{objectid}")
+        fun searchAgrovetMonitoring(@Path("objectid") objectid: String) : Call<List<AgrovetMonitoringGetBody>>
+
         @PUT("agrovets/monitoring/{id}")
-        fun postAgrovetsMonitoringForm2(@Path("id") id: String, @Body agrovetMonitoringBody: AgrovetMonitoringBody2) : Call<Message>
+        fun putAgrovetsMonitoring(@Path("id") id: String, @Body formBody1: AgrovetMonitoringFormBody1) : Call<Message>
+
+
+        @PUT("agrovets/monitoring/{id}")
+        fun postAgrovetsMonitoringForm2(@Path("id") id: String, @Body agrovetMonitoringBody2: AgrovetMonitoringBody2) : Call<Message>
+
+
 
         @PUT("agrovets/monitoring/{id}")
         fun postAgrovetsMonitoringForm3(@Path("id") id: String, @Body agrovetMonitoringBody3: AgrovetMonitoringBody3) : Call<Message>
+
 
 
 }

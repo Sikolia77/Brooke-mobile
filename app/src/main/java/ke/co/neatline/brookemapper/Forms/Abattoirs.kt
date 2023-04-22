@@ -9,6 +9,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.adapter.StatefulAdapter
 import com.auth0.android.jwt.JWT
 import ke.co.neatline.brookemapper.*
 import ke.co.neatline.brookemapper.api.ApiInterface
@@ -25,6 +26,16 @@ class Abattoirs: AppCompatActivity() {
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
     lateinit var dialog: Dialog
+
+    private var countySpinner //Spinners
+            : Spinner? = null
+
+    private var selectedState //vars to hold the values of selected State and District
+            : String? = null
+    private var selectedDistrict: String? = null
+
+    private var districtAdapter //declare adapters for the spinners
+            : ArrayAdapter<CharSequence>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +82,7 @@ class Abattoirs: AppCompatActivity() {
 
     private fun showDialog() {
         searchAbattoirs(dialog)
-        dialog.getWindow()?.setBackgroundDrawableResource(R.drawable.background_transparent);
+        dialog.window?.setBackgroundDrawableResource(R.drawable.background_transparent);
         dialog.show()
     }
 
@@ -114,7 +125,6 @@ class Abattoirs: AppCompatActivity() {
                     error.text = "Connection to server failed"
                 }
             })
-
         }
     }
 
@@ -131,6 +141,59 @@ class Abattoirs: AppCompatActivity() {
 
         val lat = intent.getDoubleExtra("lat",0.0)
         val lng = intent.getDoubleExtra("lng",0.0)
+
+        val stateAdapter = ArrayAdapter.createFromResource(this,
+            R.array.county, R.layout.abattoirs_form);
+
+        // Specify the layout to use when the list of choices appear
+        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Set the adapter to the spinner to populate the State Spinner
+        country.adapter = stateAdapter
+
+        //When any item of the country Spinner is selected
+        country.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+                //Define City Spinner but we will populate the options through the selected state
+
+                countySpinner = findViewById<Spinner>(R.id.county)
+                selectedState =
+                    country.selectedItem.toString() //Obtain the selected State
+                val parentID = parent.id
+
+                if (parentID == R.id.country) {
+                    when (selectedState) {"KENYA" -> districtAdapter = ArrayAdapter.createFromResource(
+                        parent.context,
+                        R.array.county, R.layout.abattoirs_form
+                    )
+                        else -> {}
+                    }
+                    districtAdapter!!.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Specify the layout to use when the list of choices appears
+                    countySpinner?.adapter = districtAdapter //Populate the list of Districts in respect of the State selected
+
+                    countySpinner?.onItemSelectedListener = object :
+                        AdapterView.OnItemSelectedListener {
+                        override fun onItemSelected(
+                            parent: AdapterView<*>?,
+                            view: View,
+                            position: Int,
+                            id: Long
+                        ) {
+                            selectedDistrict = countySpinner?.selectedItem.toString()
+                        }
+
+                        override fun onNothingSelected(parent: AdapterView<*>?) {}
+                    }
+                }
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
 
         next.setOnClickListener {
             error.text = ""
@@ -157,7 +220,6 @@ class Abattoirs: AppCompatActivity() {
                 status.text.toString(),
                 user.text.toString()
             )
-
 
             val apiInterface = ApiInterface.create().postAbattoir(abattoirBody)
 

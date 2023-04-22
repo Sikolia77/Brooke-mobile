@@ -1,6 +1,7 @@
 package ke.co.neatline.brookemapper.models
 
-data class AgrovetMonitoringBody(
+data class AgrovetMonitoringGetBody(
+   val ID:String,
    val Name:String,
    val Longitude: Double,
    val Latitude: Double,
