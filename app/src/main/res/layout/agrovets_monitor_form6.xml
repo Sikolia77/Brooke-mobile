@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:orientation="horizontal"
+        android:background="@color/green"
+        >
+        <TextView
+            android:id="@+id/appbar_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Agrovet Governance"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Product display"
+                    android:textColor="@color/black"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/productdisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:spinnerMode="dropdown"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green" />
+
+                </LinearLayout>
+                <!--    Text input end-->
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Appropriate waste, clinical waste and sharps management"
+
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/appropriatewastes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:spinnerMode="dropdown"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green" />
+                </LinearLayout>
+                <!--    Text input end-->
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Clinical record keeping"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/recordkeeping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:spinnerMode="dropdown"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green" />
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/next"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/dark_green_button"
+                    android:paddingStart="30dp"
+                    android:paddingRight="30dp"
+                    android:text="Finish"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light_orange"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </ScrollView>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="gone"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

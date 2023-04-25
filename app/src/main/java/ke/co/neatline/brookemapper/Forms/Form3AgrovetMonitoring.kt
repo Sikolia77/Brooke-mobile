@@ -95,16 +95,10 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val countdonwtimer = object: CountDownTimer(1000,1){
-                            override fun onTick(p0: Long) {
-                            }
-                            override fun onFinish() {
-                                progress.visibility = View.GONE
-                                val intent = Intent(this@Form3AgrovetMonitoring, Monitoring::class.java)
-                                startActivity(intent)
-                            }
-                        }
-                        countdonwtimer.start()
+                        val intent = Intent(this@Form3AgrovetMonitoring, Form2AgrovetMonitoring::class.java)
+                        intent.putExtra("id",response?.body()?.token)
+                        intent.putExtra("isUpdating", "false")
+                        startActivity(intent)
                     }
 
                     else {
@@ -170,19 +164,20 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
                     progress.visibility = View.GONE
-                    System.out.println(response?.body())
                     if(response?.body()?.success !== null){
-                        error.text = response?.body()?.success
-                        val countdonwtimer = object: CountDownTimer(3000,1){
-                            override fun onTick(p0: Long) {
-                            }
-                            override fun onFinish() {
-                                progress.visibility = View.GONE
-                                val intent = Intent(this@Form3AgrovetMonitoring, Monitoring::class.java)
-                                startActivity(intent)
-                            }
-                        }
-                        countdonwtimer.start()
+                        System.out.println("The body is "+ response.body())
+                        val intent1 = Intent(this@Form3AgrovetMonitoring, Form2AgrovetMonitoring::class.java)
+                        intent1.putExtra("isUpdating", "true")
+                        intent1.putExtra("id",response?.body()?.token)
+                        intent1.putExtra("Recognition", intent.getStringExtra("Recognition"))
+                        intent1.putExtra("Findings", intent.getStringExtra("Findings"))
+                        intent1.putExtra("ProblemCause", intent.getStringExtra("Findings"))
+                        intent1.putExtra("RationalTreatment", intent.getStringExtra("RationalTreatment"))
+                        intent1.putExtra("DoseCalculation", intent.getStringExtra("DoseCalculation"))
+                        intent1.putExtra("SideEffects", intent.getStringExtra("SideEffects"))
+                        intent1.putExtra("RouteAdministration", intent.getStringExtra("RouteAdministration"))
+                        intent1.putExtra("OwnerExplanation", intent.getStringExtra("OwnerExplanation"))
+                        startActivity(intent1)
                     }
 
                     else {
@@ -202,7 +197,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val i = Intent(this, Home::class.java)
+        val i = Intent(this, Form2AgrovetMonitoring::class.java)
         startActivity(i)
         finish()
     }

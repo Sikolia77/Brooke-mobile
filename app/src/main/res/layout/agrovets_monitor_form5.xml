@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Communication"
+            android:text="Content of Agrovet"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -51,6 +51,15 @@
                 android:orientation="vertical"
                 >
 
+                <TextView
+                    android:id="@+id/error"
+                    android:layout_width="match_parent"
+                    android:height="24dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/orange"
+                    android:layout_height="wrap_content"/>
 
                 <!--    Text input start-->
                 <TextView
@@ -58,9 +67,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Medicine Dispense History Token"
+                    android:text="Steroids"
                     android:textColor="@color/black"
-
                     />
 
                 <LinearLayout
@@ -72,7 +80,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/input_green_border">
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/dispense"
+                        android:id="@+id/steroids"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -90,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Vital Historical Questions Asked"
+                    android:text="Antibiotic eye preparation"
                     android:textColor="@color/black"
 
                     android:layout_marginBottom="10dp"
@@ -105,7 +113,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/vital"
+                        android:id="@+id/eyepreparation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -122,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="History Taken Using Mixed Questions"
+                    android:text="Dewormers - all species"
                     android:textColor="@color/black"
                     />
 
@@ -136,7 +144,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/history"
+                        android:id="@+id/dewormers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -151,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Involves Owner in Decision Making Process"
+                    android:text="Antiseptic - ideally iodine"
                     android:textColor="@color/black"
                     />
 
@@ -165,7 +173,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/decisionmaking"
+                        android:id="@+id/antiseptic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -182,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Explains Future Prevention and Management"
+                    android:text="Synthetic Pyrethroids"
                     android:textColor="@color/black"
                     />
 
@@ -196,7 +204,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/prevention"
+                        android:id="@+id/pyrethroids"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -212,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Explains Side Effects and Contradictions"
+                    android:text="Pain Relief - Oraland injectable for all species"
                     android:textColor="@color/black"
                     />
 
@@ -226,7 +234,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/effects"
+                        android:id="@+id/painrelief"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -242,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Referral to LHPs"
+                    android:text="Injectable antibiotic for equines and livestock - penicillin, injectable TMS"
                     android:textColor="@color/black"
                     />
 
@@ -256,7 +264,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/referral"
+                        android:id="@+id/injectableantibiotic"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -272,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Follow Up and Advice Planned"
+                    android:text="Oral antibiotic for equines and livestock e.g. TMS"
                     android:textColor="@color/black"
                     />
 
@@ -286,7 +294,38 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/followup"
+                        android:id="@+id/oralantibiotic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+
+                <!--    Text input start-->
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Agrovet act as a source of other animal healt and welfare products"
+                    android:textColor="@color/black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/welfareproducts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -302,7 +341,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Good Agrovet Attendant Conduct"
+                    android:text="Medicine storage and expiry"
                     android:textColor="@color/black"
                     />
 
@@ -316,7 +355,37 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/conduct"
+                        android:id="@+id/medicinestorage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/choices"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_green"
+                        android:spinnerMode="dropdown"
+                        />
+                </LinearLayout>
+
+                <!--    Text input start-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Equipment and disposables"
+                    android:textColor="@color/black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_green_border"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/equipmentDisposables"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"

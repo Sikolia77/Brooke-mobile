@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Communication"
+            android:text="Pharmacologial Expert"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -52,13 +52,32 @@
                 >
 
 
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="All fields marked with * are required"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/error"
+                    android:layout_width="match_parent"
+                    android:height="24dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/orange"
+                    android:layout_height="wrap_content"/>
+
                 <!--    Text input start-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Medicine Dispense History Token"
+                    android:text="Recognition of conditions that may cause pain - Refer to NSAID guidelines"
                     android:textColor="@color/black"
 
                     />
@@ -72,7 +91,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/input_green_border">
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/dispense"
+                        android:id="@+id/recognition"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -90,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Vital Historical Questions Asked"
+                    android:text="Interprets clinical examination findings correctly"
                     android:textColor="@color/black"
 
                     android:layout_marginBottom="10dp"
@@ -105,7 +124,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/vital"
+                        android:id="@+id/findings"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -122,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="History Taken Using Mixed Questions"
+                    android:text="Selects the most likely cause of the problem. Asks for support or refers if beyond capacity"
                     android:textColor="@color/black"
                     />
 
@@ -136,7 +155,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/history"
+                        android:id="@+id/problemcause"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -151,7 +170,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Involves Owner in Decision Making Process"
+                    android:text="Rational treatment based on clinical findings and according to Brooke protocols and guidelines
+"
                     android:textColor="@color/black"
                     />
 
@@ -165,7 +185,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/decisionmaking"
+                        android:id="@+id/rationaltreatment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -182,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Explains Future Prevention and Management"
+                    android:text="Dose of medicine calculated correctly"
                     android:textColor="@color/black"
                     />
 
@@ -196,7 +216,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/prevention"
+                        android:id="@+id/dosecalculation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -226,7 +246,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/effects"
+                        android:id="@+id/sideeffects"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -242,7 +262,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Referral to LHPs"
+                    android:text="Use correct route of administration"
                     android:textColor="@color/black"
                     />
 
@@ -256,7 +276,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/referral"
+                        android:id="@+id/routeofadministration"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -272,7 +292,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:text="Follow Up and Advice Planned"
+                    android:text="Explains to owner how to administer medic"
                     android:textColor="@color/black"
                     />
 
@@ -286,7 +306,7 @@
                     android:background="@drawable/input_green_border"
                     >
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/followup"
+                        android:id="@+id/ownerexplanation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/choices"
@@ -297,34 +317,6 @@
                 </LinearLayout>
 
                 <!--    Text input start-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:text="Good Agrovet Attendant Conduct"
-                    android:textColor="@color/black"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/input_green_border"
-                    >
-                    <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/conduct"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/choices"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/dark_green"
-                        android:spinnerMode="dropdown"
-                        />
-                </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/next"
