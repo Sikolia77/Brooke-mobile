@@ -58,6 +58,139 @@ class Practitioners: AppCompatActivity() {
 
         chooseAction(isUpdating)
 
+        val country = findViewById<Spinner>(R.id.country)
+        val county = findViewById<Spinner>(R.id.county)
+
+        val countryAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.country,
+            android.R.layout.simple_spinner_item
+        )
+
+        country.adapter = countryAdapter
+
+        country.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+                val countries = when(position){
+                    0 -> arrayOf("Mombasa", "Kwale", "Kilifi", "Tana River",
+                        "Lamu",
+                        "Taita–Taveta",
+                        "Garissa",
+                        "Wajir",
+                        "Mandera",
+                        "Marsabit",
+                        "Isiolo",
+                        "Meru",
+                        "Tharaka-Nithi",
+                        "Embu",
+                        "Kitui",
+                        "Machakos",
+                        "Makueni",
+                        "Nyandarua",
+                        "Nyeri",
+                        "Kirinyaga",
+                        "Murang'a",
+                        "Kiambu",
+                        "Turkana",
+                        "West Pokot",
+                        "Samburu",
+                        "Trans-Nzoia",
+                        "Uasin Gishu",
+                        "Elgeyo-Marakwet",
+                        "Nandi",
+                        "Baringo",
+                        "Laikipia",
+                        "Nakuru",
+                        "Narok",
+                        "Kajiado",
+                        "Kericho",
+                        "Bomet",
+                        "Kakamega",
+                        "Vihiga",
+                        "Bungoma",
+                        "Busia",
+                        "Siaya",
+                        "Kisumu",
+                        "Homa Bay",
+                        "Migori",
+                        "Kisii",
+                        "Nyamira",
+                        "Nairobi"
+                    )
+                    1 -> arrayOf("Central", "Western", "Eastern", "Northern")
+                    2 -> arrayOf("Kigoma"	,
+                        "Kilimanjaro"	,
+                        "Lindi"	,
+                        "Manyara"	,
+                        "Mara"	,
+                        "Mbeya"	,
+                        "Mjini Magharibi"	,
+                        "Morogoro"	,
+                        "Mtwara"	,
+                        "Mwanza"	,
+                        "Njombe"	,
+                        "Pemba North"	,
+                        "Pemba South"	,
+                        "Pwani"	,
+                        "Rukwa"	,
+                        "Ruvuma"	,
+                        "Shinyanga"	,
+                        "Simiyu"	,
+                        "Singida"	,
+                        "Songwe"	,
+                        "Tabora"	,
+                        "Tanga"	,
+                        "Unguja North"	,
+                        "Unguja South"
+                    )
+                    3 -> arrayOf("Jonglei"	,
+                        "Fangak" 	,
+                        "Bieh" 	,
+                        "Akobo" 	,
+                        "Maiwut" 	,
+                        "Latjor" 	,
+                        "Boma" 	,
+                        "Central Upper Nile" 	,
+                        "Northern Upper Nile "	,
+                        "Fashoda" 	,
+                        "Ruweng" 	,
+                        "Southern Liech "	,
+                        "Northern Liech" 	,
+                        "Gogrial" 	,
+                        "Twic" 	,
+                        "Tonj" 	,
+                        "Gok" 	,
+                        "Western Lake "	,
+                        "Eastern Lake" 	,
+                        "Aweil East "	,
+                        "Lol" 	,
+                        "Aweil"
+
+                    )
+                    4 -> arrayOf("Awdal",
+                        "Sanaag",
+                        "Sool",
+                        "Togdeer",
+                        "Marodi Jeh",
+                        "Sahil")
+                    else -> emptyArray()
+                }
+                val countys = ArrayAdapter(
+                    this@Practitioners,
+                    android.R.layout.simple_spinner_item,
+                    countries
+                )
+                county.adapter = countys
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
     }
 
     private fun chooseAction(editing: Boolean) {

@@ -27,15 +27,6 @@ class Abattoirs: AppCompatActivity() {
     lateinit var editor: SharedPreferences.Editor
     lateinit var dialog: Dialog
 
-    private var countySpinner //Spinners
-            : Spinner? = null
-
-    private var selectedState //vars to hold the values of selected State and District
-            : String? = null
-    private var selectedDistrict: String? = null
-
-    private var districtAdapter //declare adapters for the spinners
-            : ArrayAdapter<CharSequence>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +60,138 @@ class Abattoirs: AppCompatActivity() {
 
         chooseAction(isUpdating)
 
+        val country = findViewById<Spinner>(R.id.country)
+        val county = findViewById<Spinner>(R.id.county)
+
+        val countryAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.country,
+            android.R.layout.simple_spinner_item
+        )
+
+        country.adapter = countryAdapter
+
+        country.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+                val countries = when(position){
+                    0 -> arrayOf("Mombasa", "Kwale", "Kilifi", "Tana River",
+                        "Lamu",
+                        "Taita–Taveta",
+                        "Garissa",
+                        "Wajir",
+                        "Mandera",
+                        "Marsabit",
+                        "Isiolo",
+                        "Meru",
+                        "Tharaka-Nithi",
+                        "Embu",
+                        "Kitui",
+                        "Machakos",
+                        "Makueni",
+                        "Nyandarua",
+                        "Nyeri",
+                        "Kirinyaga",
+                        "Murang'a",
+                        "Kiambu",
+                        "Turkana",
+                        "West Pokot",
+                        "Samburu",
+                        "Trans-Nzoia",
+                        "Uasin Gishu",
+                        "Elgeyo-Marakwet",
+                        "Nandi",
+                        "Baringo",
+                        "Laikipia",
+                        "Nakuru",
+                        "Narok",
+                        "Kajiado",
+                        "Kericho",
+                        "Bomet",
+                        "Kakamega",
+                        "Vihiga",
+                        "Bungoma",
+                        "Busia",
+                        "Siaya",
+                        "Kisumu",
+                        "Homa Bay",
+                        "Migori",
+                        "Kisii",
+                        "Nyamira",
+                        "Nairobi"
+                    )
+                    1 -> arrayOf("Central", "Western", "Eastern", "Northern")
+                    2 -> arrayOf("Kigoma"	,
+                        "Kilimanjaro"	,
+                        "Lindi"	,
+                        "Manyara"	,
+                        "Mara"	,
+                        "Mbeya"	,
+                        "Mjini Magharibi"	,
+                        "Morogoro"	,
+                        "Mtwara"	,
+                        "Mwanza"	,
+                        "Njombe"	,
+                        "Pemba North"	,
+                        "Pemba South"	,
+                        "Pwani"	,
+                        "Rukwa"	,
+                        "Ruvuma"	,
+                        "Shinyanga"	,
+                        "Simiyu"	,
+                        "Singida"	,
+                        "Songwe"	,
+                        "Tabora"	,
+                        "Tanga"	,
+                        "Unguja North"	,
+                        "Unguja South"
+                    )
+                    3 -> arrayOf("Jonglei"	,
+                        "Fangak" 	,
+                        "Bieh" 	,
+                        "Akobo" 	,
+                        "Maiwut" 	,
+                        "Latjor" 	,
+                        "Boma" 	,
+                        "Central Upper Nile" 	,
+                        "Northern Upper Nile "	,
+                        "Fashoda" 	,
+                        "Ruweng" 	,
+                        "Southern Liech "	,
+                        "Northern Liech" 	,
+                        "Gogrial" 	,
+                        "Twic" 	,
+                        "Tonj" 	,
+                        "Gok" 	,
+                        "Western Lake "	,
+                        "Eastern Lake" 	,
+                        "Aweil East "	,
+                        "Lol" 	,
+                        "Aweil"
+
+                    )
+                    4 -> arrayOf("Awdal",
+                        "Sanaag",
+                        "Sool",
+                        "Togdeer",
+                        "Marodi Jeh",
+                        "Sahil")
+                    else -> emptyArray()
+                }
+                val countys = ArrayAdapter(
+                    this@Abattoirs,
+                    android.R.layout.simple_spinner_item,
+                    countries
+                )
+                county.adapter = countys
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
     }
 
     private fun chooseAction(editing: Boolean) {
@@ -136,63 +259,11 @@ class Abattoirs: AppCompatActivity() {
         val country = findViewById<Spinner>(R.id.country)
         val county = findViewById<Spinner>(R.id.county)
         val subcounty = findViewById<EditText>(R.id.subcounty)
-        val ward = findViewById<EditText>(R.id.ward)
+        val wards = findViewById<EditText>(R.id.ward)
         val status = findViewById<EditText>(R.id.status)
 
         val lat = intent.getDoubleExtra("lat",0.0)
         val lng = intent.getDoubleExtra("lng",0.0)
-
-        val stateAdapter = ArrayAdapter.createFromResource(this,
-            R.array.county, R.layout.abattoirs_form);
-
-        // Specify the layout to use when the list of choices appear
-        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        //Set the adapter to the spinner to populate the State Spinner
-        country.adapter = stateAdapter
-
-        //When any item of the country Spinner is selected
-        country.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                //Define City Spinner but we will populate the options through the selected state
-
-                countySpinner = findViewById<Spinner>(R.id.county)
-                selectedState =
-                    country.selectedItem.toString() //Obtain the selected State
-                val parentID = parent.id
-
-                if (parentID == R.id.country) {
-                    when (selectedState) {"KENYA" -> districtAdapter = ArrayAdapter.createFromResource(
-                        parent.context,
-                        R.array.county, R.layout.abattoirs_form
-                    )
-                        else -> {}
-                    }
-                    districtAdapter!!.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) // Specify the layout to use when the list of choices appears
-                    countySpinner?.adapter = districtAdapter //Populate the list of Districts in respect of the State selected
-
-                    countySpinner?.onItemSelectedListener = object :
-                        AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>?,
-                            view: View,
-                            position: Int,
-                            id: Long
-                        ) {
-                            selectedDistrict = countySpinner?.selectedItem.toString()
-                        }
-
-                        override fun onNothingSelected(parent: AdapterView<*>?) {}
-                    }
-                }
-            }
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        }
 
 
         next.setOnClickListener {
@@ -204,7 +275,7 @@ class Abattoirs: AppCompatActivity() {
             }
 
             if (TextUtils.isEmpty(status.text.toString())) {
-                error.text = "Service Area cannot be empty!"
+                error.text = "Status cannot be empty!"
                 return@setOnClickListener
             }
 
@@ -216,7 +287,7 @@ class Abattoirs: AppCompatActivity() {
                 lng,
                 lat,
                 subcounty.text.toString(),
-                ward.text.toString(),
+                wards.text.toString(),
                 status.text.toString(),
                 user.text.toString()
             )
@@ -320,7 +391,7 @@ class Abattoirs: AppCompatActivity() {
 
     }
 
-    fun updateSpinner(spinner: Spinner, value: String?) {
+    private fun updateSpinner(spinner: Spinner, value: String?) {
         val myAdap: ArrayAdapter<String> =
             spinner.getAdapter() as ArrayAdapter<String>
         val spinnerPosition = myAdap.getPosition(value)

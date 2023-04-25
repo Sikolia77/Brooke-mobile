@@ -163,6 +163,7 @@
                 />
         </LinearLayout>
         <!--    Text input end-->
+        <!--    Text input end-->
         <!--    Text input start-->
         <TextView
             android:layout_width="match_parent"
@@ -292,6 +293,16 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/county"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_green"
+            android:entries="@array/county"
+            android:spinnerMode="dropdown"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/dark_green" />
 
     </LinearLayout>
     </ScrollView>
