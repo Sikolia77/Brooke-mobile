@@ -17,14 +17,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Form3AgrovetMonitoring: AppCompatActivity() {
+class Form6AgrovetMonitoring: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agrovets_monitor_form3)
+        setContentView(R.layout.agrovets_monitor_form6)
 
         val back = findViewById<ImageView>(R.id.back)
         back.setOnClickListener {
@@ -37,7 +37,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             chooseAction(isUpdating)
         }
 
-        System.out.println("Now in form 3 isupdating is $isUpdating")
+        System.out.println("Now in form 4 isupdating is $isUpdating")
 
     }
 
@@ -53,15 +53,9 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
-        val dispense = findViewById<Spinner>(R.id.dispense)
-        val vital = findViewById<Spinner>(R.id.vital)
-        val history = findViewById<Spinner>(R.id.history)
-        val decisionmaking = findViewById<Spinner>(R.id.decisionmaking)
-        val prevention = findViewById<Spinner>(R.id.prevention)
-        val effects = findViewById<Spinner>(R.id.effects)
-        val referral = findViewById<Spinner>(R.id.referral)
-        val followup = findViewById<Spinner>(R.id.followup)
-        val conduct = findViewById<Spinner>(R.id.conduct)
+        val productdisplay = findViewById<Spinner>(R.id.productdisplay)
+        val appropriatewastes = findViewById<Spinner>(R.id.appropriatewastes)
+        val recordkeeping = findViewById<Spinner>(R.id.recordkeeping)
 
         next.setOnClickListener {
             error.text = ""
@@ -73,21 +67,15 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             System.out.println(lng)
 
             progress.visibility = View.VISIBLE
-            val formBody = AgrovetMonitoringBody3(
-                dispense.selectedItem.toString(),
-                vital.selectedItem.toString(),
-                history.selectedItem.toString(),
-                decisionmaking.selectedItem.toString(),
-                prevention.selectedItem.toString(),
-                effects.selectedItem.toString(),
-                referral.selectedItem.toString(),
-                followup.selectedItem.toString(),
-                conduct.selectedItem.toString()
+            val formBody = AgrovetMonitoringBody6(
+                productdisplay.selectedItem.toString(),
+                appropriatewastes.selectedItem.toString(),
+                recordkeeping.selectedItem.toString()
             )
 
             val id=intent.getStringExtra("id")
 
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
+            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm6(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
@@ -95,7 +83,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@Form3AgrovetMonitoring, Form4AgrovetMonitoring::class.java)
+                        val intent = Intent(this@Form6AgrovetMonitoring, Monitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")
                         startActivity(intent)
@@ -120,64 +108,44 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
-        val dispense = findViewById<Spinner>(R.id.dispense)
-        val vital = findViewById<Spinner>(R.id.vital)
-        val history = findViewById<Spinner>(R.id.history)
-        val decisionmaking = findViewById<Spinner>(R.id.decisionmaking)
-        val prevention = findViewById<Spinner>(R.id.prevention)
-        val effects = findViewById<Spinner>(R.id.effects)
-        val referral = findViewById<Spinner>(R.id.referral)
-        val followup = findViewById<Spinner>(R.id.followup)
-        val conduct = findViewById<Spinner>(R.id.conduct)
+        val productdisplay = findViewById<Spinner>(R.id.productdisplay)
+        val appropriatewastes = findViewById<Spinner>(R.id.appropriatewastes)
+        val recordkeeping = findViewById<Spinner>(R.id.recordkeeping)
+
         next.text = "Update"
 
         //Bind data
-        updateSpinner(dispense,intent.getStringExtra("Dispense"))
-        updateSpinner(vital,intent.getStringExtra("Vital"))
-        updateSpinner(history,intent.getStringExtra("History"))
-        updateSpinner(decisionmaking,intent.getStringExtra("DecisionMaking"))
-        updateSpinner(prevention,intent.getStringExtra("Prevention"))
-        updateSpinner(effects,intent.getStringExtra("Effects"))
-        updateSpinner(referral,intent.getStringExtra("Referral"))
-        updateSpinner(followup,intent.getStringExtra("FollowUp"))
-        updateSpinner(conduct,intent.getStringExtra("Conduct"))
+        updateSpinner(productdisplay,intent.getStringExtra("productdisplay"))
+        updateSpinner(appropriatewastes,intent.getStringExtra("appropriatewastes"))
+        updateSpinner(recordkeeping,intent.getStringExtra("recordkeeping"))
 
         next.setOnClickListener {
             error.text = ""
 
             progress.visibility = View.VISIBLE
-            val formBody = AgrovetMonitoringBody3(
-                dispense.selectedItem.toString(),
-                vital.selectedItem.toString(),
-                history.selectedItem.toString(),
-                decisionmaking.selectedItem.toString(),
-                prevention.selectedItem.toString(),
-                effects.selectedItem.toString(),
-                referral.selectedItem.toString(),
-                followup.selectedItem.toString(),
-                conduct.selectedItem.toString(),
+            val formBody = AgrovetMonitoringBody6(
+                productdisplay.selectedItem.toString(),
+                appropriatewastes.selectedItem.toString(),
+                recordkeeping.selectedItem.toString(),
             )
 
             val id=intent.getStringExtra("id")
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
+            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm6(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
                     progress.visibility = View.GONE
                     if(response?.body()?.success !== null){
-                        System.out.println("The body is "+ response.body())
-                        val intent1 = Intent(this@Form3AgrovetMonitoring, Form4AgrovetMonitoring::class.java)
-                        intent1.putExtra("isUpdating", "true")
-                        intent1.putExtra("id",response?.body()?.token)
-                        intent1.putExtra("Recognition", intent.getStringExtra("Recognition"))
-                        intent1.putExtra("Findings", intent.getStringExtra("Findings"))
-                        intent1.putExtra("ProblemCause", intent.getStringExtra("Findings"))
-                        intent1.putExtra("RationalTreatment", intent.getStringExtra("RationalTreatment"))
-                        intent1.putExtra("DoseCalculation", intent.getStringExtra("DoseCalculation"))
-                        intent1.putExtra("SideEffects", intent.getStringExtra("SideEffects"))
-                        intent1.putExtra("RouteAdministration", intent.getStringExtra("RouteAdministration"))
-                        intent1.putExtra("OwnerExplanation", intent.getStringExtra("OwnerExplanation"))
-                        startActivity(intent1)
+                        val countdonwtimer = object: CountDownTimer(3000,1){
+                            override fun onTick(p0: Long) {
+                            }
+                            override fun onFinish() {
+                                progress.visibility = View.GONE
+                                val intent = Intent(this@Form6AgrovetMonitoring, Monitoring::class.java)
+                                startActivity(intent)
+                            }
+                        }
+                        countdonwtimer.start()
                     }
 
                     else {
@@ -197,7 +165,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val i = Intent(this, Form2AgrovetMonitoring::class.java)
+        val i = Intent(this, Form5AgrovetMonitoring::class.java)
         startActivity(i)
         finish()
     }

@@ -115,6 +115,13 @@ interface ApiInterface {
         @PUT("agrovets/monitoring/{id}")
         fun postAgrovetsMonitoringForm3(@Path("id") id: String, @Body agrovetMonitoringBody3: AgrovetMonitoringBody3) : Call<Message>
 
+        @PUT("agrovets/monitoring/{id}")
+        fun postAgrovetsMonitoringForm4(@Path("id") id: String, @Body agrovetMonitoringBody4: AgrovetMonitoringBody4) : Call<Message>
 
+        @PUT("agrovets/monitoring/{id}")
+        fun postAgrovetsMonitoringForm5(@Path("id") id: String, @Body agrovetMonitoringBody5: AgrovetMonitoringBody5) : Call<Message>
+
+        @PUT("agrovets/monitoring/{id}")
+        fun postAgrovetsMonitoringForm6(@Path("id") id: String, @Body agrovetMonitoringBody6: AgrovetMonitoringBody6) : Call<Message>
 
 }

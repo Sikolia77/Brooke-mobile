@@ -17,14 +17,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Form3AgrovetMonitoring: AppCompatActivity() {
+class Form4AgrovetMonitoring: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.agrovets_monitor_form3)
+        setContentView(R.layout.agrovets_monitor_form4)
 
         val back = findViewById<ImageView>(R.id.back)
         back.setOnClickListener {
@@ -37,7 +37,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             chooseAction(isUpdating)
         }
 
-        System.out.println("Now in form 3 isupdating is $isUpdating")
+        System.out.println("Now in form 4 isupdating is $isUpdating")
 
     }
 
@@ -53,15 +53,14 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
-        val dispense = findViewById<Spinner>(R.id.dispense)
-        val vital = findViewById<Spinner>(R.id.vital)
-        val history = findViewById<Spinner>(R.id.history)
-        val decisionmaking = findViewById<Spinner>(R.id.decisionmaking)
-        val prevention = findViewById<Spinner>(R.id.prevention)
-        val effects = findViewById<Spinner>(R.id.effects)
-        val referral = findViewById<Spinner>(R.id.referral)
-        val followup = findViewById<Spinner>(R.id.followup)
-        val conduct = findViewById<Spinner>(R.id.conduct)
+        val recognition = findViewById<Spinner>(R.id.recognition)
+        val findings = findViewById<Spinner>(R.id.findings)
+        val problemcause = findViewById<Spinner>(R.id.problemcause)
+        val rationaltreatment = findViewById<Spinner>(R.id.rationaltreatment)
+        val dosecalculation = findViewById<Spinner>(R.id.dosecalculation)
+        val sideeffects = findViewById<Spinner>(R.id.sideeffects)
+        val routeadministration = findViewById<Spinner>(R.id.routeofadministration)
+        val ownerexplanation = findViewById<Spinner>(R.id.ownerexplanation)
 
         next.setOnClickListener {
             error.text = ""
@@ -73,21 +72,20 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             System.out.println(lng)
 
             progress.visibility = View.VISIBLE
-            val formBody = AgrovetMonitoringBody3(
-                dispense.selectedItem.toString(),
-                vital.selectedItem.toString(),
-                history.selectedItem.toString(),
-                decisionmaking.selectedItem.toString(),
-                prevention.selectedItem.toString(),
-                effects.selectedItem.toString(),
-                referral.selectedItem.toString(),
-                followup.selectedItem.toString(),
-                conduct.selectedItem.toString()
+            val formBody = AgrovetMonitoringBody4(
+                recognition.selectedItem.toString(),
+                findings.selectedItem.toString(),
+                problemcause.selectedItem.toString(),
+                rationaltreatment.selectedItem.toString(),
+                dosecalculation.selectedItem.toString(),
+                sideeffects.selectedItem.toString(),
+                routeadministration.selectedItem.toString(),
+                ownerexplanation.selectedItem.toString()
             )
 
             val id=intent.getStringExtra("id")
 
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
+            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm4(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
@@ -95,7 +93,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
-                        val intent = Intent(this@Form3AgrovetMonitoring, Form4AgrovetMonitoring::class.java)
+                        val intent = Intent(this@Form4AgrovetMonitoring, Form5AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")
                         startActivity(intent)
@@ -120,63 +118,64 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
         val next = findViewById<Button>(R.id.next)
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
-        val dispense = findViewById<Spinner>(R.id.dispense)
-        val vital = findViewById<Spinner>(R.id.vital)
-        val history = findViewById<Spinner>(R.id.history)
-        val decisionmaking = findViewById<Spinner>(R.id.decisionmaking)
-        val prevention = findViewById<Spinner>(R.id.prevention)
-        val effects = findViewById<Spinner>(R.id.effects)
-        val referral = findViewById<Spinner>(R.id.referral)
-        val followup = findViewById<Spinner>(R.id.followup)
-        val conduct = findViewById<Spinner>(R.id.conduct)
+        val recognition = findViewById<Spinner>(R.id.recognition)
+        val findings = findViewById<Spinner>(R.id.findings)
+        val problemcause = findViewById<Spinner>(R.id.problemcause)
+        val rationaltreatment = findViewById<Spinner>(R.id.rationaltreatment)
+        val dosecalculation = findViewById<Spinner>(R.id.dosecalculation)
+        val sideeffects = findViewById<Spinner>(R.id.sideeffects)
+        val routeadministration = findViewById<Spinner>(R.id.routeofadministration)
+        val ownerexplanation = findViewById<Spinner>(R.id.ownerexplanation)
+
         next.text = "Update"
 
         //Bind data
-        updateSpinner(dispense,intent.getStringExtra("Dispense"))
-        updateSpinner(vital,intent.getStringExtra("Vital"))
-        updateSpinner(history,intent.getStringExtra("History"))
-        updateSpinner(decisionmaking,intent.getStringExtra("DecisionMaking"))
-        updateSpinner(prevention,intent.getStringExtra("Prevention"))
-        updateSpinner(effects,intent.getStringExtra("Effects"))
-        updateSpinner(referral,intent.getStringExtra("Referral"))
-        updateSpinner(followup,intent.getStringExtra("FollowUp"))
-        updateSpinner(conduct,intent.getStringExtra("Conduct"))
+        updateSpinner(recognition,intent.getStringExtra("Dispense"))
+        updateSpinner(findings,intent.getStringExtra("Vital"))
+        updateSpinner(problemcause,intent.getStringExtra("History"))
+        updateSpinner(rationaltreatment,intent.getStringExtra("DecisionMaking"))
+        updateSpinner(dosecalculation,intent.getStringExtra("Prevention"))
+        updateSpinner(sideeffects,intent.getStringExtra("Effects"))
+        updateSpinner(routeadministration,intent.getStringExtra("Referral"))
+        updateSpinner(ownerexplanation,intent.getStringExtra("FollowUp"))
 
         next.setOnClickListener {
             error.text = ""
 
             progress.visibility = View.VISIBLE
-            val formBody = AgrovetMonitoringBody3(
-                dispense.selectedItem.toString(),
-                vital.selectedItem.toString(),
-                history.selectedItem.toString(),
-                decisionmaking.selectedItem.toString(),
-                prevention.selectedItem.toString(),
-                effects.selectedItem.toString(),
-                referral.selectedItem.toString(),
-                followup.selectedItem.toString(),
-                conduct.selectedItem.toString(),
+            val formBody = AgrovetMonitoringBody4(
+                recognition.selectedItem.toString(),
+                findings.selectedItem.toString(),
+                problemcause.selectedItem.toString(),
+                rationaltreatment.selectedItem.toString(),
+                dosecalculation.selectedItem.toString(),
+                sideeffects.selectedItem.toString(),
+                routeadministration.selectedItem.toString(),
+                ownerexplanation.selectedItem.toString(),
             )
 
             val id=intent.getStringExtra("id")
-            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
+            val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm4(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
                 override fun onResponse(call: Call<Message>?, response: Response<Message>?) {
                     progress.visibility = View.GONE
                     if(response?.body()?.success !== null){
                         System.out.println("The body is "+ response.body())
-                        val intent1 = Intent(this@Form3AgrovetMonitoring, Form4AgrovetMonitoring::class.java)
+                        val intent1 = Intent(this@Form4AgrovetMonitoring, Form5AgrovetMonitoring::class.java)
                         intent1.putExtra("isUpdating", "true")
                         intent1.putExtra("id",response?.body()?.token)
-                        intent1.putExtra("Recognition", intent.getStringExtra("Recognition"))
-                        intent1.putExtra("Findings", intent.getStringExtra("Findings"))
-                        intent1.putExtra("ProblemCause", intent.getStringExtra("Findings"))
-                        intent1.putExtra("RationalTreatment", intent.getStringExtra("RationalTreatment"))
-                        intent1.putExtra("DoseCalculation", intent.getStringExtra("DoseCalculation"))
-                        intent1.putExtra("SideEffects", intent.getStringExtra("SideEffects"))
-                        intent1.putExtra("RouteAdministration", intent.getStringExtra("RouteAdministration"))
-                        intent1.putExtra("OwnerExplanation", intent.getStringExtra("OwnerExplanation"))
+                        intent1.putExtra("Steroids", intent.getStringExtra("Steroids"))
+                        intent1.putExtra("EyePreparation", intent.getStringExtra("EyePreparation"))
+                        intent1.putExtra("Dewormers", intent.getStringExtra("Dewormers"))
+                        intent1.putExtra("Antiseptic", intent.getStringExtra("Pyrethroids"))
+                        intent1.putExtra("Pyrethroids", intent.getStringExtra("Pyrethroids"))
+                        intent1.putExtra("PainRelief", intent.getStringExtra("PainRelief"))
+                        intent1.putExtra("InjectableAntibiotic", intent.getStringExtra("InjectableAntibiotic"))
+                        intent1.putExtra("OralAntibiotic", intent.getStringExtra("OralAntibiotic"))
+                        intent1.putExtra("WelfareProducts", intent.getStringExtra("WelfareProducts"))
+                        intent1.putExtra("MedicineStorage", intent.getStringExtra("MedicineStorage"))
+                        intent1.putExtra("EquipmentDisposables", intent.getStringExtra("EquipmentDisposables"))
                         startActivity(intent1)
                     }
 
@@ -197,7 +196,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val i = Intent(this, Form2AgrovetMonitoring::class.java)
+        val i = Intent(this, Form3AgrovetMonitoring::class.java)
         startActivity(i)
         finish()
     }

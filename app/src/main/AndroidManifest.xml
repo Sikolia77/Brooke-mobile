@@ -57,6 +57,9 @@
         <activity android:name="ke.co.neatline.brookemapper.Forms.Form1AgrovetMonitoring" />
         <activity android:name="ke.co.neatline.brookemapper.Forms.Form2AgrovetMonitoring" />
         <activity android:name="ke.co.neatline.brookemapper.Forms.Form3AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form4AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form5AgrovetMonitoring" />
+        <activity android:name="ke.co.neatline.brookemapper.Forms.Form6AgrovetMonitoring" />
     </application>
 
 </manifest>

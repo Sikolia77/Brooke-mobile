@@ -264,8 +264,6 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
         val lng = intent.getDoubleExtra("lng",0.0)
 
         next.setOnClickListener {
-            error.text = ""
-
             if (TextUtils.isEmpty(name.text.toString())) {
                 error.text = "Name cannot be empty!"
                 return@setOnClickListener
@@ -305,7 +303,29 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                 "",
                 "",
                 "",
-                ""
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
             )
 
             val apiInterface = ApiInterface.create().postAgrovetsMonitoring(agrovetMonitoringBody)
