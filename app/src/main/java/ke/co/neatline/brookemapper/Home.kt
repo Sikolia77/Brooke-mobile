@@ -167,7 +167,7 @@ class Home : AppCompatActivity() {
 
 
     private fun goHome() {
-        startActivity(Intent(this@Home, LoginPage::class.java))
+        startActivity(Intent(this@Home, Tools::class.java))
     }
 
 

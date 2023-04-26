@@ -124,7 +124,9 @@ class Schools: AppCompatActivity() {
                         "Nairobi"
                     )
                     1 -> arrayOf("Central", "Western", "Eastern", "Northern")
-                    2 -> arrayOf("Kigoma"	,
+                    2 -> arrayOf("Arusha", "Dar es Salaam", "Dodoma", "Geita", "Iringa", "Kagera",
+                        "Katavi",
+                        "Kigoma",
                         "Kilimanjaro"	,
                         "Lindi"	,
                         "Manyara"	,
