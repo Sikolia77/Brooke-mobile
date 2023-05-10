@@ -50,6 +50,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
         val error = findViewById<TextView>(R.id.error)
         val progress = findViewById<ProgressBar>(R.id.progress)
         val education = findViewById<Spinner>(R.id.education)
+        val profession = findViewById<Spinner>(R.id.profession)
         val registration = findViewById<Spinner>(R.id.registration)
         val premises = findViewById<Spinner>(R.id.premises)
         val pest = findViewById<Spinner>(R.id.pest)
@@ -57,16 +58,17 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
 
         next.setOnClickListener {
             error.text = ""
-
             progress.visibility = View.VISIBLE
             val agrovetMonitoringBody2 = AgrovetMonitoringBody2(
                 education.selectedItem.toString(),
+                profession.selectedItem.toString(),
                 registration.selectedItem.toString(),
                 premises.selectedItem.toString(),
                 pest.selectedItem.toString(),
                 labelling.selectedItem.toString()
             )
             val id=intent.getStringExtra("id")
+            println("The form id is: $id")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody2)
 
             apiInterface.enqueue( object : Callback<Message> {
@@ -91,12 +93,12 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                 }
             })
         }
-
     }
 
     private fun prefillForms() {
         val error = findViewById<TextView>(R.id.error)
         val education = findViewById<Spinner>(R.id.education)
+        val profession = findViewById<Spinner>(R.id.profession)
         val registration = findViewById<Spinner>(R.id.registration)
         val premises = findViewById<Spinner>(R.id.premises)
         val pest = findViewById<Spinner>(R.id.pest)
@@ -108,6 +110,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
 
         //Bind data
         updateSpinner(education,intent.getStringExtra("Education"))
+        updateSpinner(profession,intent.getStringExtra("Profession"))
         updateSpinner(registration,intent.getStringExtra("Registration"))
         updateSpinner(premises,intent.getStringExtra("Premises"))
         updateSpinner(pest,intent.getStringExtra("Pest"))
@@ -116,11 +119,10 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
 
         next.setOnClickListener {
             error.text = ""
-
-
             progress.visibility = View.VISIBLE
             val agrovetMonitoringBody2 = AgrovetMonitoringBody2(
                 education.selectedItem.toString(),
+                profession.selectedItem.toString(),
                 registration.selectedItem.toString(),
                 premises.selectedItem.toString(),
                 pest.selectedItem.toString(),
@@ -137,7 +139,7 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                         System.out.println("The body is "+ response.body())
                         val intent1 = Intent(this@Form2AgrovetMonitoring, Form3AgrovetMonitoring::class.java)
                         intent1.putExtra("isUpdating", "true")
-                        intent1.putExtra("id",response?.body()?.token)
+                        intent.putExtra("id",response?.body()?.token)
                         intent1.putExtra("Dispense", intent.getStringExtra("Dispense"))
                         intent1.putExtra("Vital", intent.getStringExtra("Vital"))
                         intent1.putExtra("History", intent.getStringExtra("History"))
@@ -175,7 +177,6 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
         startActivity(i)
         finish()
     }
-
 }
 
 

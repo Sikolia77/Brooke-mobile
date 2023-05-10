@@ -420,6 +420,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                         intent.putExtra("isUpdating", "true")
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("Education", body.Education)
+                        intent.putExtra("Profession", body.Profession)
                         intent.putExtra("Registration", body.Registration)
                         intent.putExtra("Premises", body.Premises)
                         intent.putExtra("Pest", body.Pest)

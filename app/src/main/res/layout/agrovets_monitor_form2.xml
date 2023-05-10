@@ -100,6 +100,36 @@
 
         </LinearLayout>
         <!--    Text input end-->
+        <!--    Text input start-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Profession"
+            android:textColor="@color/black"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/input_green_border">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/profession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:entries="@array/education"
+                android:textColor="@color/dark_green"
+                android:spinnerMode="dropdown"
+                />
+
+        </LinearLayout>
+        <!--    Text input end-->
 
         <!--    Text input start-->
         <TextView

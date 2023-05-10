@@ -14,6 +14,7 @@ data class AgrovetMonitoringGetBody(
    val Quater: String,
    val Project: String,
    val Education:String,
+   val Profession:String,
    val Registration: String,
    val Premises: String,
    val Pest: String,

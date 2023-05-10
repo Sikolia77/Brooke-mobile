@@ -159,6 +159,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
             )
 
             val id=intent.getStringExtra("id")
+            System.out.println("The form id is: $id")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
