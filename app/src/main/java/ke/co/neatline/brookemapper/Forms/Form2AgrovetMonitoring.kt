@@ -68,7 +68,6 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                 labelling.selectedItem.toString()
             )
             val id=intent.getStringExtra("id")
-            println("The form id is: $id")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody2)
 
             apiInterface.enqueue( object : Callback<Message> {

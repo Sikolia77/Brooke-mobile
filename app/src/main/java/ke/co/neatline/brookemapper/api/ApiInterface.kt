@@ -111,7 +111,6 @@ interface ApiInterface {
         fun postAgrovetsMonitoringForm2(@Path("id") id: String, @Body agrovetMonitoringBody2: AgrovetMonitoringBody2) : Call<Message>
 
 
-
         @PUT("agrovets/monitoring/{id}")
         fun postAgrovetsMonitoringForm3(@Path("id") id: String, @Body agrovetMonitoringBody3: AgrovetMonitoringBody3) : Call<Message>
 

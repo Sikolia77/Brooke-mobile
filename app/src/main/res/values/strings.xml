@@ -30,6 +30,14 @@
         <item>PhD</item>
     </string-array>
 
+    <string-array name="profession">
+        <item></item>
+        <item>Vet Surgeon (BVM)</item>
+        <item>vet Technologist (BSc)</item>
+        <item>vet Technologist (Dip)</item>
+        <item>vet Technician (Cert)</item>
+    </string-array>
+
     <string-array name="county">
         <item></item>
         <item>	Baringo	</item>

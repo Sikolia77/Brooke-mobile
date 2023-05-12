@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:entries="@array/education"
+                android:entries="@array/profession"
                 android:textColor="@color/dark_green"
                 android:spinnerMode="dropdown"
                 />

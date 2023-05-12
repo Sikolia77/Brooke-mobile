@@ -3,10 +3,13 @@ package ke.co.neatline.brookemapper.Forms
 import android.app.Dialog
 import android.content.Intent
 import android.content.SharedPreferences
+import android.icu.text.SimpleDateFormat
+import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.auth0.android.jwt.JWT
 import ke.co.neatline.brookemapper.*
@@ -17,12 +20,14 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
+
 class Form1AgrovetMonitoring: AppCompatActivity() {
     lateinit var user:TextView
     lateinit var preferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
     lateinit var dialog: Dialog
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.agrovets_monitor_form)
@@ -186,6 +191,12 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+
+        val autoDate = findViewById<View>(R.id.date) as EditText
+
+        val dateF = SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault())
+        val date = dateF.format(Calendar.getInstance().time)
+        autoDate.setText(date);
 
     }
 
