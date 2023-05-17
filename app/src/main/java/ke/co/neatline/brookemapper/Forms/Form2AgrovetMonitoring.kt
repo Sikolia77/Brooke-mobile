@@ -2,15 +2,14 @@ package ke.co.neatline.brookemapper.Forms
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import ke.co.neatline.brookemapper.PointHome
 import ke.co.neatline.brookemapper.R
 import ke.co.neatline.brookemapper.api.ApiInterface
-import ke.co.neatline.brookemapper.models.*
-import okhttp3.internal.http.RetryAndFollowUpInterceptor
+import ke.co.neatline.brookemapper.models.AgrovetMonitoringBody2
+import ke.co.neatline.brookemapper.models.Message
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,7 +66,9 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                 pest.selectedItem.toString(),
                 labelling.selectedItem.toString()
             )
+            val intent = intent
             val id=intent.getStringExtra("id")
+            System.out.print("the id is $id")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm2(id!!,agrovetMonitoringBody2)
 
             apiInterface.enqueue( object : Callback<Message> {
@@ -76,6 +77,8 @@ class Form2AgrovetMonitoring: AppCompatActivity() {
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
+                        print("the form 2 token is ${response?.body()?.token}")
+
                         val intent = Intent(this@Form2AgrovetMonitoring, Form3AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")

@@ -339,6 +339,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                 "",
                 "",
                 "",
+
             )
 
             val apiInterface = ApiInterface.create().postAgrovetsMonitoring(agrovetMonitoringBody)
@@ -348,6 +349,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                     progress.visibility = View.GONE
                     if(response?.body()?.success !== null){
                         error.text = response?.body()?.success
+                        print("the token is ${response?.body()?.token}")
                         val intent = Intent(this@Form1AgrovetMonitoring, Form2AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)
                         intent.putExtra("isUpdating", "false")

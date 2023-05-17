@@ -1,13 +1,13 @@
 package ke.co.neatline.brookemapper.models
 
 data class AgrovetMonitoringBody3(
-   val dispense:String,
-   val vital: String,
-   val history: String,
-   val decisionmaking: String,
-   val prevention: String,
-   val effects: String,
-   val referral: String,
-   val followup: String,
-   val conduct: String,
+   val Dispense:String,
+   val Vital: String,
+   val History: String,
+   val DecisionMaking: String,
+   val Prevention: String,
+   val Effects: String,
+   val Referral: String,
+   val FollowUp: String,
+   val Conduct: String,
 )

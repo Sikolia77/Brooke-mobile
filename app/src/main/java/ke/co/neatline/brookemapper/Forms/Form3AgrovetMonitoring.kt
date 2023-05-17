@@ -65,13 +65,6 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
 
         next.setOnClickListener {
             error.text = ""
-
-            val lat = intent.getDoubleExtra("lat",0.0)
-            val lng = intent.getDoubleExtra("lng",0.0)
-
-            System.out.println(lat)
-            System.out.println(lng)
-
             progress.visibility = View.VISIBLE
             val formBody = AgrovetMonitoringBody3(
                 dispense.selectedItem.toString(),
@@ -85,8 +78,10 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
                 conduct.selectedItem.toString()
             )
 
-            val id=intent.getStringExtra("id")
+            val intent = intent
 
+            val id=intent.getStringExtra("id")
+            System.out.print("form 3 id is $id and body is $formBody")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm3(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
@@ -94,6 +89,7 @@ class Form3AgrovetMonitoring: AppCompatActivity() {
                     progress.visibility = View.GONE
                     System.out.println(response?.body())
                     if(response?.body()?.success !== null){
+                        System.out.println("the error is " + response?.body()?.success)
                         error.text = response?.body()?.success
                         val intent = Intent(this@Form3AgrovetMonitoring, Form4AgrovetMonitoring::class.java)
                         intent.putExtra("id",response?.body()?.token)

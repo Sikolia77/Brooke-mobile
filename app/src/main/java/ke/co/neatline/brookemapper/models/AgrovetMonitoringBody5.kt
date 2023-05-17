@@ -4,15 +4,15 @@ import android.widget.Spinner
 import ke.co.neatline.brookemapper.R
 
 data class AgrovetMonitoringBody5(
-   val steroids: String,
-   val eyepreparation: String,
-   val dewormers: String,
-   val antiseptic: String,
-   val pyrethroids: String,
-   val painrelief: String,
-   val injectableantibiotic: String,
-   val oralantibiotic: String,
-   val welfareproducts: String,
-   val medicinestorage: String,
-   val equipmentdisposable: String
+   val Steroids: String,
+   val EyePreparation: String,
+   val Dewormers: String,
+   val Antiseptic: String,
+   val SyntheticPyrethoids: String,
+   val PainRelief: String,
+   val InjectableAntibiotic: String,
+   val OralAntibiotic: String,
+   val WelfareProducts: String,
+   val MedicineStorage: String,
+   val EquipmentDisposables: String,
 )

@@ -78,13 +78,12 @@ class Form4AgrovetMonitoring: AppCompatActivity() {
                 problemcause.selectedItem.toString(),
                 rationaltreatment.selectedItem.toString(),
                 dosecalculation.selectedItem.toString(),
-                sideeffects.selectedItem.toString(),
                 routeadministration.selectedItem.toString(),
                 ownerexplanation.selectedItem.toString()
             )
 
             val id=intent.getStringExtra("id")
-
+            System.out.print("form four id is $id")
             val apiInterface = ApiInterface.create().postAgrovetsMonitoringForm4(id!!,formBody)
 
             apiInterface.enqueue( object : Callback<Message> {
@@ -149,7 +148,6 @@ class Form4AgrovetMonitoring: AppCompatActivity() {
                 problemcause.selectedItem.toString(),
                 rationaltreatment.selectedItem.toString(),
                 dosecalculation.selectedItem.toString(),
-                sideeffects.selectedItem.toString(),
                 routeadministration.selectedItem.toString(),
                 ownerexplanation.selectedItem.toString(),
             )
