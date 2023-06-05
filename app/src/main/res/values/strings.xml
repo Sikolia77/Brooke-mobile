@@ -91,17 +91,24 @@
 
     <string-array name="schoollevel">
         <item></item>
-        <item>PRIMARY</item>
-        <item>SECONDARY</item>
-        <item>TERTIARY</item>
+        <item>Primary</item>
+        <item>Secondary</item>
+        <item>Tertiary</item>
     </string-array>
 
     <string-array name="country">
-        <item>KENYA</item>
-        <item>UGANDA</item>
-        <item>TANZANIA</item>
-        <item>SOUTH SUDAN</item>
-        <item>SOMALILAND</item>
+        <item>Kenya</item>
+        <item>Uganda</item>
+        <item>Tanzania</item>
+        <item>South Sudan</item>
+        <item>Somaliland</item>
+    </string-array>
+
+    <string-array name="quater">
+        <item>Quater 1</item>
+        <item>Quater 2</item>
+        <item>Quater 3</item>
+        <item>Quater 4</item>
     </string-array>
 
 </resources>

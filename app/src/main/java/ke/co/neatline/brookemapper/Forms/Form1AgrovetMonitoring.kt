@@ -269,7 +269,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
         val unit = findViewById<EditText>(R.id.unit)
         val location = findViewById<EditText>(R.id.location)
         val date = findViewById<EditText>(R.id.date)
-        val quater = findViewById<EditText>(R.id.quater)
+        val quater = findViewById<Spinner>(R.id.quater)
         val project = findViewById<EditText>(R.id.project)
         val progress = findViewById<ProgressBar>(R.id.progress)
 
@@ -301,7 +301,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                 unit.text.toString(),
                 location.text.toString(),
                 date.text.toString(),
-                quater.text.toString(),
+                quater.selectedItem.toString(),
                 project.text.toString(),
                 "",
                 "",
@@ -377,7 +377,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
         val unit = findViewById<EditText>(R.id.unit)
         val location = findViewById<EditText>(R.id.location)
         val date = findViewById<EditText>(R.id.date)
-        val quater = findViewById<EditText>(R.id.quater)
+        val quater = findViewById<Spinner>(R.id.quater)
         val project = findViewById<EditText>(R.id.project)
         val progress = findViewById<ProgressBar>(R.id.progress)
         val next = findViewById<Button>(R.id.next)
@@ -392,7 +392,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
         unit.setText(body.Unit)
         location.setText(body.Location)
         date.setText(body.Date)
-        quater.setText(body.Quater)
+        updateSpinner(quater,body.Quater)
         project.setText(body.Project)
 
         val id = body.ID
@@ -416,7 +416,7 @@ class Form1AgrovetMonitoring: AppCompatActivity() {
                 unit.text.toString(),
                 location.text.toString(),
                 date.text.toString(),
-                quater.text.toString(),
+                quater.selectedItem.toString(),
                 project.text.toString(),
             )
 

@@ -269,6 +269,7 @@
                 />
             <!--    Text input end-->
 
+            <!--    Text input start-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -276,23 +277,28 @@
                 android:layout_marginEnd="24dp"
                 android:text="Quater"
                 android:textColor="@color/black"
+
                 />
 
-            <EditText
-                android:id="@+id/quater"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Quater"
-                android:inputType="text"
-                android:textColor="@color/dark_green"
                 android:background="@drawable/input_green_border"
-                android:padding="10dp"
-                />
+                >
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/quater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/quater"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/dark_green"
+                    android:spinnerMode="dropdown"
+                    />
+            </LinearLayout>
             <!--    Text input end-->
 
             <TextView
